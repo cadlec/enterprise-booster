@@ -3,44 +3,116 @@
 <head>
   <title>Notion Radar Chart</title>
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <style>
+    body {
+        font-family: Arial, sans-serif;
+    }
+    .score-list {
+        list-style-type: none;
+        padding: 0;
+    }
+    .score-list li {
+        font-size: 18px;
+        margin-bottom: 10px;
+    }
+    .label {
+        font-weight: bold;
+    }
+    .score {
+        color: gray;
+    }
+    .chart-container {
+        width: 80%; /* Adjust width as needed */
+        height: 500px; /* Fix the height */
+        margin: auto;
+    }
+    canvas {
+        display: block; /* Prevents inline display issues */
+        height: 100% !important; /* Forces height */
+    }
+</style>
 </head>
 <body>
-  <canvas id="radarChart" width="400" height="400"></canvas>
+    <div>
+        <div style="text-align: center;"><h1>Vote score et votre diagramme</h1></div>
 
-  <script>
-    // Get user ID from URL parameter
-    //const urlParams = new URLSearchParams(window.location.search);
-    //const userId = urlParams.get('user_id');
+        <div style="width: 50%; margin:auto;">
+            <p style="margin-bottom: 50px; margin-top: 50px;">
+                <ul class="score-list">
+                    <li><span class="label">Fondations:</span> <span class="score" id="fondationScore"></span></li>
+                    <li><span class="label">Marketing:</span> <span class="score" id="marketingScore"></span></li>
+                    <li><span class="label">Leviers:</span> <span class="score" id="levierScore"></span></li>
+                    <li><span class="label">Équipe:</span> <span class="score" id="equipeScore"></span></li>
+                    <li><span class="label">Démultiplication:</span> <span class="score" id="demultiplicationScore"></span></li>
+                    <li><span class="label">Pilotage:</span> <span class="score" id="pilotageScore"></span></li>
+                </ul>
+            </p>
+        </div>
+    </div>
 
-    // Fetch data from JSONBin.io
-    async function loadChart() {
-      try {
-        //const response = await fetch(`https://api.jsonbin.io/v3/b/${userId}/latest`);
-        //const { record: data } = await response.json();
-        
-        new Chart(document.getElementById('radarChart'), {
-          type: 'radar',
-          data: {
-            labels: ["Fondations", "Marketing", "Leviers", "Équipe", "Démultiplication", "Pilotage"],
-            datasets: [{
-              label: 'User Stats',
-              data: [28, 4, 0, 0, 0, 0],
-              backgroundColor: 'rgba(54, 162, 235, 0.2)',
-              borderColor: 'rgba(54, 162, 235, 1)',
-            }]
-          },
-          options: {
-            scale: { ticks: { beginAtZero: true, max: 100 } },
-            responsive: true,
-            maintainAspectRatio: false
-          }
-        });
-      } catch (error) {
-        document.body.innerHTML = `Error loading chart: ${error.message}`;
-      }
-    }
+    <div class="chart-container">
+        <canvas id="radarChart"></canvas>
+    </div>
+    <script>
+        // Get user ID from URL parameter
+        const urlParams = new URLSearchParams(window.location.search);
+        const submission_id = urlParams.get('submission_id');
 
-    loadChart();
-  </script>
+        //console.log(submission_id)
+
+        async function loadChart() {
+            try {
+
+                var formData = await fetch(`https://api.airtable.com/v0/appM4MrWRe5U8Cb0Y/tblTM7P1VOCdkfB4f?maxRecords=1&filterByFormula={Submission ID}='${submission_id}'`, {
+                    headers: {
+                    'Authorization': 'Bearer patTFFPDg0LQiYoJW.01f3ca93e0a5646e8cc8570c9312c31687d0ffd3b1f58f226c92ff5899115e35',
+                    "Content-Type": "application/json"
+                    }
+                })
+                .then(response => response.json())
+                .then(data => data['records'][0].fields)
+
+                const chartData = [
+                    formData['Score Fondations'],
+                    formData['Score Marketing'],
+                    formData['Score Levier'],
+                    formData['Score Équipe'],
+                    formData['Score Démultiplication'],
+                    formData['Score Pilotage'],
+                ];
+
+                document.getElementById("fondationScore").textContent = chartData[0];
+                document.getElementById("marketingScore").textContent = chartData[1];
+                document.getElementById("levierScore").textContent = chartData[2];
+                document.getElementById("equipeScore").textContent = chartData[3];
+                document.getElementById("demultiplicationScore").textContent = chartData[4];
+                document.getElementById("pilotageScore").textContent = chartData[5];
+
+                //console.log(chartData)
+
+                new Chart(document.getElementById('radarChart'), {
+                    type: 'radar',
+                    data: {
+                        labels: ["Fondations", "Marketing", "Leviers", "Équipe", "Démultiplication", "Pilotage"],
+                        datasets: [{
+                            label: 'User Stats',
+                            data: chartData,
+                            backgroundColor: 'rgba(54, 162, 235, 0.2)',
+                            borderColor: 'rgba(54, 162, 235, 1)',
+                        }]
+                    },
+                    options: {
+                        scale: { ticks: { beginAtZero: true, max: 100 } },
+                        responsive: true,
+                        maintainAspectRatio: false
+                    }
+                });
+            } catch (error) {
+                document.body.innerHTML = `Error loading chart: ${error.message}`;
+            }
+        }
+
+        loadChart();
+    </script>
 </body>
 </html>
