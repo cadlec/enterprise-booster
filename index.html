@@ -1,1 +1,46 @@
-hello
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Notion Radar Chart</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <canvas id="radarChart" width="400" height="400"></canvas>
+
+  <script>
+    // Get user ID from URL parameter
+    //const urlParams = new URLSearchParams(window.location.search);
+    //const userId = urlParams.get('user_id');
+
+    // Fetch data from JSONBin.io
+    async function loadChart() {
+      try {
+        //const response = await fetch(`https://api.jsonbin.io/v3/b/${userId}/latest`);
+        //const { record: data } = await response.json();
+        
+        new Chart(document.getElementById('radarChart'), {
+          type: 'radar',
+          data: {
+            labels: ["Fondations", "Marketing", "Leviers", "Équipe", "Démultiplication", "Pilotage"],
+            datasets: [{
+              label: 'User Stats',
+              data: [28, 4, 0, 0, 0, 0],
+              backgroundColor: 'rgba(54, 162, 235, 0.2)',
+              borderColor: 'rgba(54, 162, 235, 1)',
+            }]
+          },
+          options: {
+            scale: { ticks: { beginAtZero: true, max: 100 } },
+            responsive: true,
+            maintainAspectRatio: false
+          }
+        });
+      } catch (error) {
+        document.body.innerHTML = `Error loading chart: ${error.message}`;
+      }
+    }
+
+    loadChart();
+  </script>
+</body>
+</html>
