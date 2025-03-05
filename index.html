@@ -7,19 +7,30 @@
     body {
         font-family: Arial, sans-serif;
     }
+    #main{
+        background-color: rgba(229, 231, 235, 0.5);
+        width: 70%;
+        margin: auto;
+        border-radius: 30px;
+        padding-top: 30px;
+        padding-bottom: 50px;
+    }
     .score-list {
         list-style-type: none;
         padding: 0;
+        margin-bottom: 50px;
+        line-height: 2.1rem;
     }
     .score-list li {
-        font-size: 18px;
+        font-size: 25px;
         margin-bottom: 10px;
     }
     .label {
-        font-weight: bold;
+        font-weight: 500;
+        color: #04091f;
     }
     .score {
-        color: gray;
+        color: #3c62ab;
     }
     .chart-container {
         width: 80%; /* Adjust width as needed */
@@ -29,29 +40,33 @@
     canvas {
         display: block; /* Prevents inline display issues */
         height: 100% !important; /* Forces height */
+        background-color: #04091f;
+        padding: 30px;
     }
 </style>
 </head>
 <body>
-    <div>
-        <div style="text-align: center;"><h1>Vote score et votre diagramme</h1></div>
+    <div id="main">
+        <div>
+            <div style="text-align: center;"><h1>Votre score et diagramme de Maturité</h1></div>
 
-        <div style="width: 50%; margin:auto;">
-            <p style="margin-bottom: 50px; margin-top: 50px;">
-                <ul class="score-list">
-                    <li><span class="label">Fondations:</span> <span class="score" id="fondationScore"></span></li>
-                    <li><span class="label">Marketing:</span> <span class="score" id="marketingScore"></span></li>
-                    <li><span class="label">Leviers:</span> <span class="score" id="levierScore"></span></li>
-                    <li><span class="label">Équipe:</span> <span class="score" id="equipeScore"></span></li>
-                    <li><span class="label">Démultiplication:</span> <span class="score" id="demultiplicationScore"></span></li>
-                    <li><span class="label">Pilotage:</span> <span class="score" id="pilotageScore"></span></li>
-                </ul>
-            </p>
+            <div style="width: 50%; margin:auto;">
+                <p style="margin-bottom: 50px; margin-top: 50px;">
+                    <ul class="score-list">
+                        <li><span class="label">1/ Fondations:</span> <span class="score" id="fondationScore"></span></li>
+                        <li><span class="label">2/ Marketing:</span> <span class="score" id="marketingScore"></span></li>
+                        <li><span class="label">3/ Leviers:</span> <span class="score" id="levierScore"></span></li>
+                        <li><span class="label">4/ Équipe:</span> <span class="score" id="equipeScore"></span></li>
+                        <li><span class="label">5/ Démultiplication:</span> <span class="score" id="demultiplicationScore"></span></li>
+                        <li><span class="label">6/ Pilotage:</span> <span class="score" id="pilotageScore"></span></li>
+                    </ul>
+                </p>
+            </div>
         </div>
-    </div>
 
-    <div class="chart-container">
-        <canvas id="radarChart"></canvas>
+        <div class="chart-container">
+            <canvas id="radarChart"></canvas>
+        </div>
     </div>
     <script>
         // Get user ID from URL parameter
@@ -81,28 +96,47 @@
                     formData['Score Pilotage'],
                 ];
 
-                document.getElementById("fondationScore").textContent = chartData[0];
-                document.getElementById("marketingScore").textContent = chartData[1];
-                document.getElementById("levierScore").textContent = chartData[2];
-                document.getElementById("equipeScore").textContent = chartData[3];
-                document.getElementById("demultiplicationScore").textContent = chartData[4];
-                document.getElementById("pilotageScore").textContent = chartData[5];
+                document.getElementById("fondationScore").textContent = chartData[0] +"%";
+                document.getElementById("marketingScore").textContent = chartData[1] +"%";
+                document.getElementById("levierScore").textContent = chartData[2] +"%";
+                document.getElementById("equipeScore").textContent = chartData[3] +"%";
+                document.getElementById("demultiplicationScore").textContent = chartData[4] +"%";
+                document.getElementById("pilotageScore").textContent = chartData[5] +"%";
 
                 //console.log(chartData)
 
                 new Chart(document.getElementById('radarChart'), {
                     type: 'radar',
                     data: {
-                        labels: ["Fondations", "Marketing", "Leviers", "Équipe", "Démultiplication", "Pilotage"],
+                        labels: ["1/ Fondations", "2/ Marketing", "3/ Leviers", "4/ Équipe", "5/ Démultiplication", "6/ Pilotage"],
                         datasets: [{
-                            label: 'User Stats',
+                            label: 'Maturité par domaine',
                             data: chartData,
                             backgroundColor: 'rgba(54, 162, 235, 0.2)',
                             borderColor: 'rgba(54, 162, 235, 1)',
+                            pointBackgroundColor: 'rgba(225, 181, 82)'
                         }]
                     },
                     options: {
-                        scale: { ticks: { beginAtZero: true, max: 100 } },
+                        scales: {
+                            r: {
+                                grid: {
+                                  color: 'rgba(225, 181, 82)'
+                                },
+                                ticks: {
+                                    stepSize: 5,
+                                    beginAtZero: true,
+                                    max: 100,
+                                    callback: function(value) { return value + '%'; }
+                                },
+                                pointLabels: {
+                                    color: "rgba(255, 255, 255, 1)",
+                                    font: {
+                                        size: 20
+                                    }
+                                }
+                            }
+                        },
                         responsive: true,
                         maintainAspectRatio: false
                     }
