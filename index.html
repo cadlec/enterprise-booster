@@ -43,6 +43,30 @@
         background-color: #04091f;
         padding: 30px;
     }
+
+    #btn-div{
+        text-align: center;
+    }
+
+    #btn-div > button {
+        background-color: #e1b64e;
+        color: #04091f;
+        padding: 15px;
+        border-radius: 7px;
+        margin-top: 10px;
+        font-size: 15px;
+        font-weight: 600;
+        box-shadow: 1px 1px 3px black;
+    }
+
+    #btn-div > button:hover {
+        cursor: pointer;
+        background-color: #04091f;
+        color: #e1b64e;
+        padding: 15px;
+        border-radius: 7px;
+        margin-top: 10px;
+    }
 </style>
 </head>
 <body>
@@ -66,6 +90,10 @@
 
         <div class="chart-container">
             <canvas id="radarChart"></canvas>
+        </div>
+
+        <div id="btn-div">
+            <button>Cliquez pour prendre rendez-vous et découvrir votre plan d'action</button>
         </div>
     </div>
     <script>
