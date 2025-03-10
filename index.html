@@ -2,13 +2,41 @@
 <html>
 <head>
   <title>Diagramme Radar Booster</title>
+  <meta charset="UTF-8">
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <style>
     body {
         font-family: Arial, sans-serif;
+        margin: 0;
     }
+
+    .navbar > img{
+        width: 100%;
+        display: block;
+        object-fit: cover;
+        width: 100%;
+        height: 50vh;
+    }
+
+    .avatar{
+        width: 100%;
+        max-width: 700px;
+        margin: 0px auto;
+        position: relative;
+        z-index: 2;
+    }
+
+    .avatar img{
+        display: block;
+        width: 130px;
+        height: 130px;
+        margin-top: -50px;
+        object-fit: cover;
+        border-radius: 50%;
+    }
+
     #main{
-        background-color: rgba(229, 231, 235, 0.5);
+        /*background-color: rgba(229, 231, 235, 0.5);*/
         width: 70%;
         margin: auto;
         border-radius: 30px;
@@ -23,23 +51,56 @@
     }
     .score-list li {
         font-size: 25px;
+        font-family: 'Inter';
         margin-bottom: 10px;
+
+        position: relative;
+        -webkit-box-align: center;
+        align-items: center;
+        min-height: 36px;
+        padding: 10px 10px;
+        box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 1px 0px, rgba(61, 59, 53, 0.16) 0px 0px 0px 1px, rgba(61, 59, 53, 0.08) 0px 2px 5px 0px;
+        border-radius: 5px;
+        background-color: rgba(255, 255, 255, 0.5);
+        -webkit-tap-highlight-color: transparent;
+
     }
+
     .label {
         font-weight: 500;
         color: #04091f;
     }
+
+    .badge{
+        display: inline-flex;
+        -webkit-box-align: center;
+        align-items: center;
+        -webkit-box-pack: center;
+        justify-content: center;
+        width: 25px;
+        height: 25px;
+        min-width: 18px;
+        min-height: 18px;
+        background-color: #04095a;
+        font-size: 27px;
+        font-weight: 900;
+        line-height: 1;
+        color: rgb(255, 255, 255);
+        border-radius: 3px;
+    }
+
     .score {
-        color: #3c62ab;
+        color: #e1b64e;
+        font-weight: 900;
     }
     .chart-container {
-        width: 80%; /* Adjust width as needed */
-        height: 500px; /* Fix the height */
+        width: 80%;
+        height: 500px;
         margin: auto;
     }
     canvas {
-        display: block; /* Prevents inline display issues */
-        height: 100% !important; /* Forces height */
+        display: block;
+        width: 100%;
         background-color: #04091f;
         padding: 30px;
     }
@@ -48,127 +109,141 @@
         text-align: center;
     }
 
-    #btn-div > button {
-        background-color: #e1b64e;
-        color: #04091f;
+    #btn-div > a {
+        display: inline-block;
+        background-color: #04091f;
+        color: #e1b64e;
         padding: 15px;
         border-radius: 7px;
-        margin-top: 10px;
+        margin-top: 30px;
         font-size: 15px;
         font-weight: 600;
         box-shadow: 1px 1px 3px black;
     }
 
-    #btn-div > button:hover {
+    #btn-div > a:hover {
         cursor: pointer;
-        background-color: #04091f;
-        color: #e1b64e;
+        background-color: #e1b64e;
+        color: #04091f;
         padding: 15px;
         border-radius: 7px;
-        margin-top: 10px;
     }
 </style>
 </head>
 <body>
-    <div id="main">
+    <div>
         <div>
-            <div style="text-align: center;"><h1>Votre score et diagramme de Maturité</h1></div>
-
-            <div style="width: 50%; margin:auto;">
-                <p style="margin-bottom: 50px; margin-top: 50px;">
-                    <ul class="score-list">
-                        <li><span class="label">1/ Fondations:</span> <span class="score" id="fondationScore"></span></li>
-                        <li><span class="label">2/ Marketing:</span> <span class="score" id="marketingScore"></span></li>
-                        <li><span class="label">3/ Leviers:</span> <span class="score" id="levierScore"></span></li>
-                        <li><span class="label">4/ Équipe:</span> <span class="score" id="equipeScore"></span></li>
-                        <li><span class="label">5/ Démultiplication:</span> <span class="score" id="demultiplicationScore"></span></li>
-                        <li><span class="label">6/ Pilotage:</span> <span class="score" id="pilotageScore"></span></li>
-                    </ul>
-                </p>
+            <div class="navbar">
+                <img src="https://storage.tally.so/5eb194ef-7797-49d9-8970-a4a6da8177b3/1738452438211-1-.jpeg" alt="Form cover">
             </div>
+            <div class="avatar">
+                <img src="https://storage.tally.so/6862b555-2cd2-4c80-acd2-258f70bc7493/1728391908712.jpeg" alt="Form logo">
+            </div>
+
+            <div id="main">
+
+                <div style="text-align: center;"><h1>Vos scores et diagramme de Maturité</h1></div>
+
+                <div style="width: 50%; margin:auto;">
+                    <p style="margin-bottom: 50px; margin-top: 50px;">
+                        <ul class="score-list">
+                            <li><span class="label"><span class="badge">1</span> Fondations:</span> <span class="score" id="fondationScore"></span></li>
+                            <li><span class="label"><span class="badge">2</span> Marketing:</span> <span class="score" id="marketingScore"></span></li>
+                            <li><span class="label"><span class="badge">3</span> Leviers:</span> <span class="score" id="levierScore"></span></li>
+                            <li><span class="label"><span class="badge">4</span> Équipe:</span> <span class="score" id="equipeScore"></span></li>
+                            <li><span class="label"><span class="badge">5</span> Démultiplication:</span> <span class="score" id="demultiplicationScore"></span></li>
+                            <li><span class="label"><span class="badge">6</span> Pilotage:</span> <span class="score" id="pilotageScore"></span></li>
+                        </ul>
+                    </p>
+                </div>
+
+                <div class="chart-container">
+                    <canvas id="radarChart"></canvas>
+                </div>
+
+                <div id="btn-div">
+                    <a href="https://calendly.com/boosteur-d-entreprise/30min?month=2025-03">Cliquez pour prendre rendez-vous et découvrir votre plan d'action</a>
+                </div>
+            </div>
+
         </div>
 
-        <div class="chart-container">
-            <canvas id="radarChart"></canvas>
-        </div>
 
-        <div id="btn-div">
-            <button>Cliquez pour prendre rendez-vous et découvrir votre plan d'action</button>
-        </div>
     </div>
     <script>
         // Get user ID from URL parameter
         const urlParams = new URLSearchParams(window.location.search);
         const submission_id = urlParams.get('submission_id');
 
-        //console.log(submission_id)
-
         async function loadChart() {
             try {
 
-                var formData = await fetch(`https://api.airtable.com/v0/appM4MrWRe5U8Cb0Y/tblTM7P1VOCdkfB4f?maxRecords=1&filterByFormula={Submission ID}='${submission_id}'`, {
+                var formData = await fetch(`https://hook.eu1.make.com/ijr2waq039s0bj1q3gngju1tfhpys4cn?submission_id=${submission_id}`, {
                     headers: {
-                    'Authorization': 'Bearer patTFFPDg0LQiYoJW.01f3ca93e0a5646e8cc8570c9312c31687d0ffd3b1f58f226c92ff5899115e35',
-                    "Content-Type": "application/json"
+                        "Content-Type": "application/json"
                     }
                 })
                 .then(response => response.json())
-                .then(data => data['records'][0].fields)
+                .then(data => JSON.parse(data) )
+                .catch(error => {
+                    console.error("Error:", error);
+                });
 
-                const chartData = [
-                    formData['Score Fondations'],
-                    formData['Score Marketing'],
-                    formData['Score Levier'],
-                    formData['Score Équipe'],
-                    formData['Score Démultiplication'],
-                    formData['Score Pilotage'],
-                ];
+                if(formData) {
 
-                document.getElementById("fondationScore").textContent = chartData[0] +"%";
-                document.getElementById("marketingScore").textContent = chartData[1] +"%";
-                document.getElementById("levierScore").textContent = chartData[2] +"%";
-                document.getElementById("equipeScore").textContent = chartData[3] +"%";
-                document.getElementById("demultiplicationScore").textContent = chartData[4] +"%";
-                document.getElementById("pilotageScore").textContent = chartData[5] +"%";
+                    const chartData = [
+                        formData['Score Fondations'],
+                        formData['Score Marketing'],
+                        formData['Score Levier'],
+                        formData['Score Équipe'],
+                        formData['Score Démultiplication'],
+                        formData['Score Pilotage'],
+                    ];
 
-                //console.log(chartData)
+                    document.getElementById("fondationScore").textContent = chartData[0] +"%";
+                    document.getElementById("marketingScore").textContent = chartData[1] +"%";
+                    document.getElementById("levierScore").textContent = chartData[2] +"%";
+                    document.getElementById("equipeScore").textContent = chartData[3] +"%";
+                    document.getElementById("demultiplicationScore").textContent = chartData[4] +"%";
+                    document.getElementById("pilotageScore").textContent = chartData[5] +"%";
 
-                new Chart(document.getElementById('radarChart'), {
-                    type: 'radar',
-                    data: {
-                        labels: ["1/ Fondations", "2/ Marketing", "3/ Leviers", "4/ Équipe", "5/ Démultiplication", "6/ Pilotage"],
-                        datasets: [{
-                            label: 'Maturité par domaine',
-                            data: chartData,
-                            backgroundColor: 'rgba(54, 162, 235, 0.2)',
-                            borderColor: 'rgba(54, 162, 235, 1)',
-                            pointBackgroundColor: 'rgba(225, 181, 82)'
-                        }]
-                    },
-                    options: {
-                        scales: {
-                            r: {
-                                grid: {
-                                  color: 'rgba(225, 181, 82)'
-                                },
-                                ticks: {
-                                    stepSize: 5,
-                                    beginAtZero: true,
-                                    max: 100,
-                                    callback: function(value) { return value + '%'; }
-                                },
-                                pointLabels: {
-                                    color: "rgba(255, 255, 255, 1)",
-                                    font: {
-                                        size: 20
+                    new Chart(document.getElementById('radarChart'), {
+                        type: 'radar',
+                        data: {
+                            labels: ["1/ Fondations", "2/ Marketing", "3/ Leviers", "4/ Équipe", "5/ Démultiplication", "6/ Pilotage"],
+                            datasets: [{
+                                label: 'Maturité par domaine',
+                                data: chartData,
+                                backgroundColor: 'rgba(54, 162, 235, 0.2)',
+                                borderColor: 'rgba(54, 162, 235, 1)',
+                                pointBackgroundColor: 'rgba(225, 181, 82)'
+                            }]
+                        },
+                        options: {
+                            scales: {
+                                r: {
+                                    grid: {
+                                    color: 'rgba(225, 181, 82)'
+                                    },
+                                    ticks: {
+                                        stepSize: 5,
+                                        beginAtZero: true,
+                                        max: 100,
+                                        callback: function(value) { return value + '%'; }
+                                    },
+                                    pointLabels: {
+                                        color: "rgba(255, 255, 255, 1)",
+                                        font: {
+                                            size: 20
+                                        }
                                     }
                                 }
-                            }
-                        },
-                        responsive: true,
-                        maintainAspectRatio: false
-                    }
-                });
+                            },
+                            responsive: true,
+                            maintainAspectRatio: false
+                        }
+                    });
+                }
             } catch (error) {
                 document.body.innerHTML = `Error loading chart: ${error.message}`;
             }
