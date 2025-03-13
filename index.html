@@ -1,373 +1,398 @@
-<!DOCTYPE html>
 <html>
-<head>
-  <title>Diagramme Radar Booster</title>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-  <style>
-    body {
-        font-family: Arial, sans-serif;
-        margin: 0;
-    }
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🚀 Rapport BOOSTEUR - Diagnostic Express de Maturité</title>
+    <link rel="stylesheet" href="styles/report-style.css">
+  </head>
+  <body>
 
-    .navbar > img{
-        width: 100%;
-        display: block;
-        object-fit: cover;
-        width: 100%;
-        height: 50vh;
-    }
+    <div class="sc-bzkCTM cgUlqp">
+      <div width="250" class="sc-huXwEz hnYwNt">
+        <picture class="sc-FFETS iBifEW">
+            <img id="image-d1348ae7" src="https://d1yei2z3i6k35z.cloudfront.net/1954946/67cb039534adf_BoosteurdEntrepriseLogo.png" width="250" loading="lazy" class="sc-frniUE iFWvBd">
+        </picture>
+      </div>
+    </div>
 
-    .avatar{
-        width: 100%;
-        max-width: 700px;
-        margin: 0px auto;
-        position: relative;
-        z-index: 2;
-    }
+    <div class="avatar">
+      <img src="https://storage.tally.so/6862b555-2cd2-4c80-acd2-258f70bc7493/1728391908712.jpeg" alt="Form logo">
+    </div>
 
-    .avatar img{
-        display: block;
-        width: 100px;
-        height: 100px;
-        margin-top: -70px;
-        object-fit: cover;
-        border-radius: 50%;
-    }
+    <div id="main" class="page sans">
+      <header>
+        <h1 class="page-title"><strong>🚀 Rapport BOOSTEUR - Diagnostic Express de Maturité</strong></h1>
+        <p class="page-description"></p>
+      </header>
 
-    #main{
-        margin: auto;
-        border-radius: 30px;
-        padding-top: 30px;
-        padding-bottom: 50px;
-    }
-    .score-list {
-        list-style-type: none;
-        padding: 0;
-        margin-bottom: 50px;
-        line-height: 2.1rem;
-    }
-    .score-list li {
-        font-size: 25px;
-        font-family: 'Inter';
-        margin-bottom: 10px;
+      <div class="page-body">
+        <h2 id="1b5a37cd-425d-80da-a178-edc52ee39f68" class="">1️⃣ Score Global &amp; Interprétation</h2>
+        <p id="1b5a37cd-425d-80d1-9629-d8289f41a831" class="">📊 <strong>Score Global :</strong> <span id="scoreGlobal"></span></p>
 
-        position: relative;
-        -webkit-box-align: center;
-        align-items: center;
-        min-height: 36px;
-        padding: 10px 10px;
-        box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 1px 0px, rgba(61, 59, 53, 0.16) 0px 0px 0px 1px, rgba(61, 59, 53, 0.08) 0px 2px 5px 0px;
-        border-radius: 5px;
-        background-color: rgba(255, 255, 255, 0.5);
-        -webkit-tap-highlight-color: transparent;
+        <p id="1b5a37cd-425d-8053-aab8-c46383786f60" class="">🎯 <strong>Niveaux de Maturité en Automatisation</strong> :</p>
+        <ul id="1b5a37cd-425d-8063-acca-ecc7decce188" class="bulleted-list">
+          <li style="list-style-type:disc"><strong>0-20%</strong> : Automatisation quasi inexistante – Dépendance humaine critique.</li>
+        </ul>
+        <ul id="1b5a37cd-425d-80f0-8206-edbd9807405d" class="bulleted-list">
+          <li style="list-style-type:disc"><strong>21-40% </strong>: Début d’automatisation – Certains processus restent manuels.</li>
+        </ul>
+        <ul id="1b5a37cd-425d-805d-8734-e32a8d28357a" class="bulleted-list">
+          <li style="list-style-type:disc"><strong>41-60%</strong> : Automatisation intermédiaire – Beaucoup de tâches encore optimisables.</li>
+        </ul>
+        <ul id="1b5a37cd-425d-80d9-8067-e3bbdc4d67cb" class="bulleted-list">
+          <li style="list-style-type:disc"><strong>61-80%</strong> : Automatisation avancée – Optimisation forte mais ajustements nécessaires.</li>
+        </ul>
+        <ul id="1b5a37cd-425d-806a-ab5b-cce8b051654c" class="bulleted-list">
+          <li style="list-style-type:disc"><strong>81-100%</strong> : 🚀 <strong>Entreprise 100% autonome, optimisée et scalable</strong>.</li>
+        </ul>
+        <h2 id="1b5a37cd-425d-80a9-bae2-fbafa88fc51e" class="">2️⃣ Résultats par Pilier</h2>
 
-    }
+        <div style="overflow-x:auto;">
+          <table class="simple-table">
+            <Thead>
+              <tr>
+                <th class=""><strong>Domaine</strong></th>
+                <th class=""> <strong>Score (%)</strong></th>
+              </tr>
+            </Thead>
 
-    .label {
-        font-weight: 500;
-        color: #04091f;
-    }
-
-    .badge{
-        display: inline-flex;
-        -webkit-box-align: center;
-        align-items: center;
-        -webkit-box-pack: center;
-        justify-content: center;
-        width: 25px;
-        height: 25px;
-        min-width: 18px;
-        min-height: 18px;
-        background-color: #04095a;
-        font-size: 27px;
-        font-weight: 900;
-        line-height: 1;
-        color: rgb(255, 255, 255);
-        border-radius: 3px;
-    }
-
-    .score {
-        color: #e1b64e;
-        font-weight: 900;
-    }
-    .chart-container {
-        width: 80%;
-        height: 500px;
-        margin: auto;
-    }
-    canvas {
-        display: block;
-        width: 100%;
-        background-color: #04091f;
-        padding: 30px;
-    }
-
-    #btn-div{
-        text-align: center;
-    }
-
-    #btn-div > a {
-        display: inline-block;
-        background-color: #04091f;
-        color: #e1b64e;
-        padding: 15px;
-        border-radius: 7px;
-        margin-top: 30px;
-        font-size: 15px;
-        font-weight: 600;
-        box-shadow: 1px 1px 3px black;
-    }
-
-    #btn-div > a:hover {
-        cursor: pointer;
-        background-color: #e1b64e;
-        color: #04091f;
-        padding: 15px;
-        border-radius: 7px;
-    }
-
-    .cgUlqp {
-        background-color: #0d1738;
-        position: relative;
-        text-align: initial;
-        display: flex;
-        flex-direction: column;
-        margin: 0px 0px 20px;
-        padding-top: 30px;
-        padding-bottom: 30px;
-    }
-
-    .hnYwNt {
-        align-self: center;
-    }
-
-    .iBifEW {
-        position: relative;
-        display: block;
-        height: 0px;
-        overflow: visible;
-        padding-bottom: 40.82%;
-    }
-
-    .iFWvBd {
-        display: block;
-        max-width: 100%;
-        object-fit: contain;
-        width: 250px;
-        box-shadow: none;
-    }
-
-    @media (max-width: 480px) {
-        .chart-container {
-            height: 300px;
-            width: 100%;
-        }
-
-        .score-list li {
-            font-size: 16px;
-            line-height: 1.5rem;
-        }
-
-        #main h1 {
-            font-size: 20px;
-        }
-
-        #btn-div > a {
-            width: 90%;
-            white-space: normal;
-            line-height: 1.4;
-            padding: 7px;
-        }
-
-        div[style*="width: 50%"] {
-            width: 90% !important;
-        }
-
-        .avatar img{
-            margin: auto;
-            margin-top: -70px;
-            width: 80px;
-            height: 80px;
-        }
-
-        canvas {
-            padding: 5px;
-        }
-    }
-
-    .score-list li {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-    }
-
-    .sc-frniUE.iFWvBd {
-        max-width: 100%;
-        height: auto;
-    }
-</style>
-</head>
-<body>
-    <div>
-        <div>
-            <!-- <div class="navbar">
-                <img src="https://storage.tally.so/5eb194ef-7797-49d9-8970-a4a6da8177b3/1738452438211-1-.jpeg" alt="Form cover">
-            </div>
-            <div class="avatar">
-                <img src="https://storage.tally.so/6862b555-2cd2-4c80-acd2-258f70bc7493/1728391908712.jpeg" alt="Form logo">
-            </div> -->
-
-            <div class="sc-bzkCTM cgUlqp">
-                <div width="250" class="sc-huXwEz hnYwNt">
-                    <picture class="sc-FFETS iBifEW">
-                        <img id="image-d1348ae7" src="https://d1yei2z3i6k35z.cloudfront.net/1954946/67cb039534adf_BoosteurdEntrepriseLogo.png" width="250" loading="lazy" class="sc-frniUE iFWvBd">
-                    </picture>
-                </div>
-            </div>
-
-            <div class="avatar">
-                <img src="https://storage.tally.so/6862b555-2cd2-4c80-acd2-258f70bc7493/1728391908712.jpeg" alt="Form logo">
-            </div>
-
-            <div id="main">
-
-                <div style="text-align: center; padding-left: 15px; padding-right: 15px;"><h1>Vos scores et diagramme de Maturité</h1></div>
-
-                <div style="width: 50%; margin:auto;">
-                    <p style="margin-bottom: 50px; margin-top: 50px;">
-                        <ul class="score-list">
-                            <li><span class="label"><span class="badge">1</span> Fondations:</span> <span class="score" id="fondationScore"></span></li>
-                            <li><span class="label"><span class="badge">2</span> Marketing:</span> <span class="score" id="marketingScore"></span></li>
-                            <li><span class="label"><span class="badge">3</span> Leviers:</span> <span class="score" id="levierScore"></span></li>
-                            <li><span class="label"><span class="badge">4</span> Équipe:</span> <span class="score" id="equipeScore"></span></li>
-                            <li><span class="label"><span class="badge">5</span> Démultiplication:</span> <span class="score" id="demultiplicationScore"></span></li>
-                            <li><span class="label"><span class="badge">6</span> Pilotage:</span> <span class="score" id="pilotageScore"></span></li>
-                        </ul>
-                    </p>
-                </div>
-
-                <div class="chart-container">
-                    <canvas id="radarChart"></canvas>
-                </div>
-
-                <div id="btn-div">
-                    <a href="https://calendly.com/boosteur-d-entreprise/30min?month=2025-03">Cliquez pour prendre rendez-vous et découvrir votre plan d'action</a>
-                </div>
-            </div>
-
+            <tbody>
+              <tr>
+                <td class="">Fondations</td>
+                <td class=""><span id="fondationScore"></span></td>
+              </tr>
+              <tr>
+                <td class="">Marketing</td>
+                <td class=""><span id="marketingScore"></span></td>
+              </tr>
+              <tr>
+                <td class="">Leviers</td>
+                <td class=""><span id="levierScore"></span></td>
+              </tr>
+              <tr>
+                <td class="">Équipe</td>
+                <td class=""><span id="equipeScore"></span></td>
+              </tr>
+              <tr>
+                <td class="">Démultiplication</td>
+                <td class=""><span id="demultiplicationScore"></span></td>
+              </tr>
+              <tr>
+                <td class="">Pilotage</td>
+                <td class=""><span id="pilotageScore"></span></td>
+              </tr>
+            </tbody>
+          </table>
         </div>
 
+        <h2 id="1b5a37cd-425d-8007-b677-ebb9614513ad" class="">3️⃣ Plan d’Action Personnalisé</h2>
+        <h3 id="1b5a37cd-425d-8034-b532-d4590cafd39f" class="">🔹 <strong>Fondations</strong></h3>
+        <ul id="1b5a37cd-425d-807d-a16f-d80e3fd05f16" class="bulleted-list">
+          <li style="list-style-type:disc">📌 <strong>Objectif</strong> : Structurer et documenter TOUS les processus métier.</li>
+        </ul>
+        <ul id="1b5a37cd-425d-808a-ab83-e0e400a7e7d1" class="bulleted-list">
+          <li style="list-style-type:disc">✅ Mettre en place un <strong>SOP centralisé</strong> (Standard Operating Procedures).</li>
+        </ul>
+        <ul id="1b5a37cd-425d-806c-8dd7-e1d89e58fe7f" class="bulleted-list">
+          <li style="list-style-type:disc">✅ Automatiser la gestion du temps et des workflows pour éviter les pertes de temps.</li>
+        </ul>
+        <ul id="1b5a37cd-425d-8018-aff0-d243fdb2285f" class="bulleted-list">
+          <li style="list-style-type:disc">✅ Implémenter des <strong>dashboards en temps réel</strong> pour le suivi des performances.</li>
+        </ul>
+        <h3 id="1b5a37cd-425d-8035-b783-e7a7f4478162" class="">🔹 Marketing</h3>
+        <ul id="1b5a37cd-425d-8090-b779-fb9c5d4d361c" class="bulleted-list">
+          <li style="list-style-type:disc">📌 <strong>Objectif</strong> : Automatiser entièrement l’acquisition et la conversion.</li>
+        </ul>
+        <ul id="1b5a37cd-425d-80b5-9950-d90d8dea670b" class="bulleted-list">
+          <li style="list-style-type:disc">✅ Mettre en place des <strong>funnels de conversion automatisés</strong>.</li>
+        </ul>
+        <ul id="1b5a37cd-425d-8029-b58f-dcbff431e9b7" class="bulleted-list">
+          <li style="list-style-type:disc">✅ Développer un <strong>CRM intelligent</strong> avec scoring automatique des leads.</li>
+        </ul>
+        <ul id="1b5a37cd-425d-8051-9633-d29e347a37fc" class="bulleted-list">
+          <li style="list-style-type:disc">✅ Utiliser l’A/B testing pour <strong>optimiser en continu</strong>.</li>
+        </ul>
+        <h3 id="1b5a37cd-425d-8036-8ee9-f2d2110dad84" class="">🔹 Leviers</h3>
+        <ul id="1b5a37cd-425d-8015-b843-d9552ecca979" class="bulleted-list">
+          <li style="list-style-type:disc">📌 <strong>Objectif </strong>: Rendre l’entreprise ultra efficace avec des outils d’automatisation.</li>
+        </ul>
+        <ul id="1b5a37cd-425d-8025-bb29-df3da04a9597" class="bulleted-list">
+          <li style="list-style-type:disc">✅ Intégrer un <strong>ERP</strong> pour centraliser toutes les opérations.</li>
+        </ul>
+        <ul id="1b5a37cd-425d-80a8-b484-e67582cef402" class="bulleted-list">
+          <li style="list-style-type:disc">✅ Automatiser la <strong>facturation, les paiements et les relances clients</strong>.</li>
+        </ul>
+        <ul id="1b5a37cd-425d-80e7-b2ce-ef52dc398f98" class="bulleted-list">
+          <li style="list-style-type:disc">✅ Mettre en place un <strong>support client sans intervention humaine (FAQ, Chatbot, IA)</strong>.</li>
+        </ul>
+        <h3 id="1b5a37cd-425d-8084-8f00-f7c5ae7bd282" class="">🔹 Équipe</h3>
+        <ul id="1b5a37cd-425d-801c-9c0a-fcf662333ec8" class="bulleted-list">
+          <li style="list-style-type:disc">📌 <strong>Objectif </strong>: Structurer et automatiser la gestion RH et la performance.</li>
+        </ul>
+        <ul id="1b5a37cd-425d-809d-818a-e623dec36de3" class="bulleted-list">
+          <li style="list-style-type:disc">✅ Implémenter un <strong>système d’onboarding et formation automatique</strong>.</li>
+        </ul>
+        <ul id="1b5a37cd-425d-80ba-886b-dc1097ad53f7" class="bulleted-list">
+          <li style="list-style-type:disc">✅ Standardiser le suivi des performances et la reconnaissance des collaborateurs.</li>
+        </ul>
+        <ul id="1b5a37cd-425d-8040-8d03-d5ac72732734" class="bulleted-list">
+          <li style="list-style-type:disc">✅ Optimiser la rétention et l’engagement grâce à des <strong>indicateurs RH dynamiques</strong>.</li>
+        </ul>
+        <h3 id="1b5a37cd-425d-8097-88e0-f25b598f2c35" class="">🔹 Démultiplication</h3>
+        <ul id="1b5a37cd-425d-80f1-82a9-c073c5d14bef" class="bulleted-list">
+          <li style="list-style-type:disc">📌 <strong>Objectif </strong>: Scaler l’entreprise sans augmentation des coûts.</li>
+        </ul>
+        <ul id="1b5a37cd-425d-8029-82eb-dbbca51ba5f5" class="bulleted-list">
+          <li style="list-style-type:disc">✅ Standardiser les processus pour une <strong>expansion rapide</strong>.</li>
+        </ul>
+        <ul id="1b5a37cd-425d-8086-83d0-f9f1d4967359" class="bulleted-list">
+          <li style="list-style-type:disc">✅ Développer un modèle duplicable et <strong>adaptable à d’autres marchés</strong>.</li>
+        </ul>
+        <ul id="1b5a37cd-425d-8049-a6fa-efdc7abb8c8c" class="bulleted-list">
+          <li style="list-style-type:disc">✅ Structurer l’entreprise pour une <strong>vente ou une levée de fonds future</strong>.</li>
+        </ul>
+        <h3 id="1b5a37cd-425d-80ae-9dfc-e787f4c2e29f" class="">🔹 Pilotage</h3>
+        <ul id="1b5a37cd-425d-806f-b601-c1e1a37e5ef6" class="bulleted-list">
+          <li style="list-style-type:disc">📌 <strong>Objectif </strong>: Assurer une gouvernance data-driven 100% autonome.</li>
+        </ul>
+        <ul id="1b5a37cd-425d-8048-9da7-c4a43891b0d0" class="bulleted-list">
+          <li style="list-style-type:disc">✅ Mettre en place des <strong>KPIs dynamiques et interactifs</strong>.</li>
+        </ul>
+        <ul id="1b5a37cd-425d-800a-80b6-ddf4beb097de" class="bulleted-list">
+          <li style="list-style-type:disc">✅ Intégrer des <strong>alertes et recommandations automatisées</strong> pour la prise de décision.</li>
+        </ul>
+        <ul id="1b5a37cd-425d-807f-a572-cab34ed32d27" class="bulleted-list">
+          <li style="list-style-type:disc">✅ Adopter un <strong>système de gestion prédictive des risques</strong>.</li>
+        </ul>
+        <h2 id="1b5a37cd-425d-800b-bd23-cba926b5991a" class="">4️⃣ Simulation Financière &amp; Gains Attendus</h2>
+        <p id="1b5a37cd-425d-80bd-b88c-f6d04d2f3cad" class="">Ce tableau estime <strong>les gains financiers et opérationnels</strong> en fonction du <strong>taux d’automatisation</strong> d’une entreprise. Il se base sur <strong>4 indicateurs clés</strong> :</p>
+        <p id="1b5a37cd-425d-807e-9183-c269625055d0" class="">1️⃣ <strong>Productivité (↑)</strong> : L’augmentation de la productivité des équipes et des opérations.</p>
+        <p id="1b5a37cd-425d-80b5-87e4-c4e96461bad9" class="">2️⃣ <strong>Coûts (↓)</strong> : La réduction des coûts fixes et opérationnels grâce à l’automatisation.</p>
+        <p id="1b5a37cd-425d-80fc-b129-c96bd145035e" class="">3️⃣ <strong>Revenus (↑)</strong> : L’augmentation du chiffre d’affaires grâce à des processus plus performants.</p>
+        <p id="1b5a37cd-425d-80cf-b85c-c6670e018175" class="">4️⃣ <strong>Rentabilité (↑)</strong> : La rentabilité globale de l’entreprise après automatisation.</p>
+        <h3 id="1b5a37cd-425d-8064-a1cd-c62c99155e99" class=""><strong>🔍 Lecture du tableau</strong></h3>
 
+        <div style="overflow-x:auto;">
+          <table id="1b5a37cd-425d-806e-89a6-ff818f2629da" class="simple-table">
+            <thead>
+              <tr id="1b5a37cd-425d-80a8-9404-db8e42b254c3">
+                <th id=":zo]" class="">Automatisation (%)</th>
+                <th id="qR[q" class="">Productivité ↑</th>
+                <th id="YqCR" style="width: 70%;">Coûts ↓</th>
+                <th id="pMJL" class="">Revenus ↑</th>
+                <th id="_wlr" class="">Rentabilité ↑</th>
+              </tr>
+            </thead>
+
+            <tbody>
+              <tr id="1b5a37cd-425d-8026-89d6-ef6a5be17040">
+                <td id=":zo]" class=""><strong>0%</strong></td>
+                <td id="qR[q" class=""><strong>0%</strong></td>
+                <td id="YqCR" class=""><strong>0%</strong></td>
+                <td id="pMJL" class=""><strong>0%</strong></td>
+                <td id="_wlr" class=""><strong>0%</strong></td>
+              </tr>
+              <tr id="1b5a37cd-425d-803f-9d7d-e9695d10bda5">
+                <td id=":zo]" class=""><strong>20%</strong></td>
+                <td id="qR[q" class=""><strong>+15%</strong></td>
+                <td id="YqCR" class=""><strong>-10%</strong></td>
+                <td id="pMJL" class=""><strong>+12%</strong></td>
+                <td id="_wlr" class=""><strong>+8%</strong></td>
+              </tr>
+              <tr id="1b5a37cd-425d-800e-a474-ceb5d7aa3981">
+                <td id=":zo]" class=""><strong>40%</strong></td>
+                <td id="qR[q" class=""><strong>+35%</strong></td>
+                <td id="YqCR" class=""><strong>-25%</strong></td>
+                <td id="pMJL" class=""><strong>+30%</strong></td>
+                <td id="_wlr" class=""><strong>+20%</strong></td>
+              </tr>
+              <tr id="1b5a37cd-425d-80d9-92ec-fe351858038d">
+                <td id=":zo]" class=""><strong>60%</strong></td>
+                <td id="qR[q" class=""><strong>+50%</strong></td>
+                <td id="YqCR" class=""><strong>-40%</strong></td>
+                <td id="pMJL" class=""><strong>+48%</strong></td>
+                <td id="_wlr" class=""><strong>+35%</strong></td>
+              </tr>
+              <tr id="1b5a37cd-425d-80ac-becc-cfbf20e60668">
+                <td id=":zo]" class=""><strong>80%</strong></td>
+                <td id="qR[q" class=""><strong>+70%</strong></td>
+                <td id="YqCR" class=""><strong>-60%</strong></td>
+                <td id="pMJL" class=""><strong>+65%</strong></td>
+                <td id="_wlr" class=""><strong>+50%</strong></td>
+              </tr>
+              <tr id="1b5a37cd-425d-80f2-ad24-c65d567c3be8">
+                <td id=":zo]" class=""><strong>100%</strong></td>
+                <td id="qR[q" class=""><strong>+90%</strong></td>
+                <td id="YqCR" class=""><strong>-80%</strong></td>
+                <td id="pMJL" class=""><strong>+85%</strong></td>
+                <td id="_wlr" class=""><strong>+70%</strong></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h3 id="1b5a37cd-425d-8041-b6c0-fc413a9ff668" class=""><strong>📌 Explication des valeurs :</strong></h3>
+        <ul id="1b5a37cd-425d-80b4-bef8-f608d2d28c43" class="bulleted-list">
+          <li style="list-style-type:disc"><strong>0% d’automatisation</strong> : L’entreprise n’a aucun gain, elle est 100% dépendante de processus manuels inefficaces.</li>
+        </ul>
+        <ul id="1b5a37cd-425d-80c3-8ad8-fc846ae32646" class="bulleted-list">
+          <li style="list-style-type:disc"><strong>20% d’automatisation</strong> : Légères améliorations de productivité (+15%), baisse des coûts (-10%) et augmentation des revenus (+12%).</li>
+        </ul>
+        <ul id="1b5a37cd-425d-80c6-9289-d04b0d9c3820" class="bulleted-list">
+          <li style="list-style-type:disc"><strong>40% d’automatisation</strong> : Impact plus fort avec +35% de productivité et une réduction des coûts de 25%.</li>
+        </ul>
+        <ul id="1b5a37cd-425d-80c5-b814-f7c4ca2c8b13" class="bulleted-list">
+          <li style="list-style-type:disc"><strong>60% d’automatisation</strong> : Les bénéfices deviennent significatifs, avec +50% de productivité et une rentabilité améliorée de 35%.</li>
+        </ul>
+        <ul id="1b5a37cd-425d-80f9-a9d9-e60d2904ff84" class="bulleted-list">
+          <li style="list-style-type:disc"><strong>80% d’automatisation</strong> : L’entreprise atteint une efficacité quasi maximale, réduisant ses coûts de 60% et augmentant ses revenus de 65%.</li>
+        </ul>
+        <ul id="1b5a37cd-425d-807c-8dcf-f2bec56af95c" class="bulleted-list">
+          <li style="list-style-type:disc"><strong>100% d’automatisation</strong> : L’entreprise est <strong>totalement autonome</strong>, avec <strong>+90% de productivité, -80% de coûts, +85% de revenus et +70% de rentabilité</strong>.</li>
+        </ul>
+        <h3 id="1b5a37cd-425d-8050-bc0e-d4eae973e65d" class=""><strong>📈 Application concrète :</strong></h3>
+        <ol type="1" id="1b5a37cd-425d-80b4-9184-ef56d58a8814" class="numbered-list" start="1">
+          <li><strong>Une entreprise à 40% d’automatisation</strong> gagne <strong>+35% de productivité</strong> et réduit ses coûts de <strong>25%</strong>.→ <strong>Résultat</strong> : Plus d’efficacité, baisse des dépenses, et meilleure rentabilité.</li>
+        </ol>
+        <ol type="1" id="1b5a37cd-425d-80ac-b0be-e3d67bf95994" class="numbered-list" start="2">
+          <li><strong>Une entreprise à 80% d’automatisation</strong> a des coûts <strong>60% plus bas</strong> et des revenus <strong>65% plus élevés</strong>.→ <strong>Résultat</strong> : Elle est <strong>presque autonome et scalable</strong>, avec une croissance prévisible.</li>
+        </ol>
+        <p id="1b5a37cd-425d-806d-a482-fbd6a6057e7f" class=""></p>
+
+        <div style="overflow-x:auto;">
+          <table id="1b5a37cd-425d-809e-a5f1-fba050785ab6" class="simple-table">
+            <tbody>
+              <tr id="1b5a37cd-425d-8069-b169-dbd9cbbbde6c">
+                <td id=":zo]" class="">Automatisation (%)</td>
+                <td id="qR[q" class="">Revenus projetés (€) </td>
+                <td id="YqCR" class="">Coûts projetés (€)</td>
+                <td id="pMJL" class="">Marge brute (%)</td>
+              </tr>
+              <tr id="1b5a37cd-425d-8072-a8c9-c666d7910d8a">
+                <td id=":zo]" class=""><strong>0%</strong></td>
+                <td id="qR[q" class="">500,000 €</td>
+                <td id="YqCR" class="">350,000 €</td>
+                <td id="pMJL" class="">30.00%</td>
+              </tr>
+              <tr id="1b5a37cd-425d-807b-970f-db4a1d90bba1">
+                <td id=":zo]" class=""><strong>20%</strong></td>
+                <td id="qR[q" class=""> 560,000 €</td>
+                <td id="YqCR" class="">315,000 €</td>
+                <td id="pMJL" class="">43.75%</td>
+              </tr>
+              <tr id="1b5a37cd-425d-80a0-9403-dbe5f3ab0210">
+                <td id=":zo]" class=""><strong>40%</strong></td>
+                <td id="qR[q" class="">650,000 €</td>
+                <td id="YqCR" class="">262,500 €</td>
+                <td id="pMJL" class="">59.62%</td>
+              </tr>
+              <tr id="1b5a37cd-425d-80c0-84c6-d2dbd94e9481">
+                <td id=":zo]" class=""><strong>60%</strong></td>
+                <td id="qR[q" class="">740,000 € </td>
+                <td id="YqCR" class="">210,000 €</td>
+                <td id="pMJL" class="">71.62%</td>
+              </tr>
+              <tr id="1b5a37cd-425d-8064-92f9-de0726ed6c0e">
+                <td id=":zo]" class=""><strong>80%</strong></td>
+                <td id="qR[q" class="">825,000 € </td>
+                <td id="YqCR" class="">140,000 €</td>
+                <td id="pMJL" class="">83.03%</td>
+              </tr>
+              <tr id="1b5a37cd-425d-801d-9e09-d22bc0e6637a">
+                <td id=":zo]" class=""><strong>100%</strong></td>
+                <td id="qR[q" class="">925,000 €</td>
+                <td id="YqCR" class="">69,999 €</td>
+                <td id="pMJL" class="">92.43%</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h3 id="1b5a37cd-425d-800b-b991-d0b2c8f52fd3" class=""><strong>🔹 Conclusion :</strong></h3>
+        <p id="1b5a37cd-425d-80b2-b5bc-e5c16f59c1e2" class="">✔️ <strong>Plus le pourcentage d’automatisation est élevé, plus l’entreprise est efficace, rentable et scalable</strong>.</p>
+        <p id="1b5a37cd-425d-809b-9cb7-c5af73120caa" class="">✔️ <strong>Une entreprise 100% automatisée fonctionne avec des coûts minimaux et une productivité maximale</strong>.</p>
+        <p id="1b5a37cd-425d-80c0-85f0-f2b4aa5b775c" class="">✔️ <strong>Atteindre 80-100% d’automatisation est l’objectif pour garantir une entreprise autonome et optimisée</strong>.</p>
+        <h3 id="1b5a37cd-425d-80fa-8501-df75b08e2cf5" class="">📊 Graphique de Maturité :</h3>
+        <figure id="1b5a37cd-425d-8086-b74a-d828267a284d" class="image"><a href="https://sas-barclais-consulting.odoo.com/web/image/5236-7c179f3b/output%20%284%29.png?access_token=d2d0d0b3-19cd-4e81-9743-f46ae8301f61"><img src="https://sas-barclais-consulting.odoo.com/web/image/5236-7c179f3b/output%20%284%29.png?access_token=d2d0d0b3-19cd-4e81-9743-f46ae8301f61"/></a></figure>
+        <h2 id="1b5a37cd-425d-8038-904d-ed96e02452ff" class="">5️⃣ Conclusion &amp; Prochaines Étapes</h2>
+        <h3 id="1b5a37cd-425d-807d-ad6d-fed17d8426de" class="">🚀 Votre entreprise est-elle prête pour l’automatisation totale ?</h3>
+        <p id="1b5a37cd-425d-80a9-8195-d50a560d6204" class="">Si votre score est inférieur à 80%, il est <strong>urgent</strong> d’optimiser et d’automatiser votre entreprise.</p>
+        <p id="1b5a37cd-425d-8019-9596-ffac273ff60b" class="">L’automatisation n’est pas un luxe, mais une nécessité pour <strong>scaler efficacement</strong> et <strong>maximiser la rentabilité</strong>.</p>
+        <h3 id="1b5a37cd-425d-80c0-85ac-fee5d50b3006" class="">✅ Prochaines Étapes :</h3>
+        <ul id="1b5a37cd-425d-80e2-be97-e1e889fc555f" class="bulleted-list">
+          <li style="list-style-type:disc">Mettre en place les <strong>processus documentés et automatisés</strong> immédiatement.</li>
+        </ul>
+        <ul id="1b5a37cd-425d-80b9-9796-cb5f9e7418a5" class="bulleted-list">
+          <li style="list-style-type:disc">Optimiser les workflows avec des <strong>outils de gestion et de suivi intelligents</strong>.</li>
+        </ul>
+        <ul id="1b5a37cd-425d-80ed-b8a4-f95d9d1b1c70" class="bulleted-list">
+          <li style="list-style-type:disc">Appliquer les recommandations du <strong>Plan d’Action</strong> pour chaque pilier faible.</li>
+        </ul>
+        <ul id="1b5a37cd-425d-806d-a2e3-fdcb36f47ca9" class="bulleted-list">
+          <li style="list-style-type:disc">Mettre en œuvre la <strong>stratégie de démultiplication</strong> pour scaler rapidement.</li>
+        </ul>
+        <ul id="1b5a37cd-425d-802b-94d6-cf975aca3ed4" class="bulleted-list">
+          <li style="list-style-type:disc"><strong>*🛠 Besoin d’un accompagnement ou d’un audit approfondi ? Contactez-nous pour un plan d’optimisation personnalisé.</strong></li>
+        </ul>
+        <p id="1b5a37cd-425d-8000-8afd-fd9c77bb2dac" class=""><strong>🚀 Vers une entreprise 100% automatisée et scalable ! 🚀</strong></p>
+      </div>
     </div>
+
     <script>
-        // Get user ID from URL parameter
-        const urlParams = new URLSearchParams(window.location.search);
-        const submission_id = urlParams.get('submission_id');
+      // Get user ID from URL parameter
+      const urlParams = new URLSearchParams(window.location.search);
+      const submission_id = urlParams.get('submission_id');
 
-        async function loadChart() {
-            try {
+      async function loadData() {
+        try {
+          if(submission_id){
+            document.getElementById('main').style.display = "block";
 
-                if(submission_id){
+            //sample data
+            /*var formData = 1;
+            var chartData = [80, 50, 30, 15, 15, 70];*/
 
-                    /* sample data
-                    var formData = 1;
-                    var chartData = [80, 50, 30, 15, 15, 70];*/
-
-                    var formData = await fetch(`https://hook.eu1.make.com/ijr2waq039s0bj1q3gngju1tfhpys4cn?submission_id=${submission_id}`, {
-                        headers: {
-                            "Content-Type": "application/json"
-                        }
-                    })
-                    .then(response => response.json())
-                    .then(data => JSON.parse(data) )
-                    .catch(error => {
-                        console.error("Error:", error);
-                    });
-
-                    if(formData) {
-
-                        const chartData = [
-                            formData['Score Fondations'],
-                            formData['Score Marketing'],
-                            formData['Score Levier'],
-                            formData['Score Équipe'],
-                            formData['Score Démultiplication'],
-                            formData['Score Pilotage'],
-                        ];
-
-                        document.getElementById("fondationScore").textContent = chartData[0] +"%";
-                        document.getElementById("marketingScore").textContent = chartData[1] +"%";
-                        document.getElementById("levierScore").textContent = chartData[2] +"%";
-                        document.getElementById("equipeScore").textContent = chartData[3] +"%";
-                        document.getElementById("demultiplicationScore").textContent = chartData[4] +"%";
-                        document.getElementById("pilotageScore").textContent = chartData[5] +"%";
-
-                        const radarChart = new Chart(document.getElementById('radarChart'), {
-                            type: 'radar',
-                            data: {
-                                labels: ["1/ Fondations", "2/ Marketing", "3/ Leviers", "4/ Équipe", "5/ Démultiplication", "6/ Pilotage"],
-                                datasets: [{
-                                    label: 'Maturité par domaine',
-                                    data: chartData,
-                                    backgroundColor: 'rgba(54, 162, 235, 0.2)',
-                                    borderColor: 'rgba(54, 162, 235, 1)',
-                                    pointBackgroundColor: 'rgba(225, 181, 82)'
-                                }]
-                            },
-                            options: {
-                                scales: {
-                                    r: {
-                                        grid: {
-                                            color: 'rgba(225, 181, 82)'
-                                        },
-                                        ticks: {
-                                            stepSize: 5,
-                                            beginAtZero: true,
-                                            max: 100,
-                                            callback: function(value) { return value + '%'; }
-                                        },
-                                        pointLabels: {
-                                            color: "rgba(255, 255, 255, 1)",
-                                            font: {
-                                                size: () => window.innerWidth < 768 ? 12 : 20
-                                            },
-                                            /*callback: (value) => value.length > 12 ? value.substring(0, 10) + '...' : value*/
-                                        }
-                                    }
-                                },
-                                plugins: {
-                                    legend: {
-                                        display: true
-                                    },
-                                    tooltip: {
-                                        enabled: true,
-                                        bodyFont: {
-                                            size: 14
-                                        },
-                                        callbacks: {
-                                            label: (context) => `${context.dataset.label}: ${context.raw}%`
-                                        }
-                                    }
-                                },
-                                responsive: true,
-                                maintainAspectRatio: false,
-                                animation: {
-                                    duration: 1000,
-                                    easing: 'easeOutQuart'
-                                },
-                            }
-                        });
-                    }
+            var formData = await fetch(`https://hook.eu1.make.com/ijr2waq039s0bj1q3gngju1tfhpys4cn?submission_id=${submission_id}`, {
+                headers: {
+                    "Content-Type": "application/json"
                 }
+            })
+            .then(response => response.json())
+            .then(data => JSON.parse(data) )
+            .catch(error => {
+                console.error("Error:", error);
+            });
 
-            }catch (error) {
-                document.body.innerHTML = `Error loading chart: ${error.message}`;
+            if(formData) {
+              const chartData = [
+                  formData['Score Fondations'],
+                  formData['Score Marketing'],
+                  formData['Score Levier'],
+                  formData['Score Équipe'],
+                  formData['Score Démultiplication'],
+                  formData['Score Pilotage'],
+              ];
+
+              let scoreGlobal = Math.trunc( (chartData.reduce((a, b) => a + b, 0))/6 );
+              console.log(scoreGlobal);
+
+              document.getElementById("scoreGlobal").textContent = scoreGlobal +"%";
+              document.getElementById("fondationScore").textContent = chartData[0] +"%";
+              document.getElementById("marketingScore").textContent = chartData[1] +"%";
+              document.getElementById("levierScore").textContent = chartData[2] +"%";
+              document.getElementById("equipeScore").textContent = chartData[3] +"%";
+              document.getElementById("demultiplicationScore").textContent = chartData[4] +"%";
+              document.getElementById("pilotageScore").textContent = chartData[5] +"%";
+
             }
-        }
+          }
 
-        loadChart();
-    </script>
-</body>
+        }catch (error) {
+            document.body.innerHTML = `Error loading data: ${error.message}`;
+        }
+      }
+
+      loadData();
+  </script>
+  </body>
 </html>
