@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Diagramme Radar Booster</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+    }
+
+    .navbar > img{
+        width: 100%;
+        display: block;
+        object-fit: cover;
+        width: 100%;
+        height: 50vh;
+    }
+
+    .avatar{
+        width: 100%;
+        max-width: 700px;
+        margin: 0px auto;
+        position: relative;
+        z-index: 2;
+    }
+
+    .avatar img{
+        display: block;
+        width: 100px;
+        height: 100px;
+        margin-top: -70px;
+        object-fit: cover;
+        border-radius: 50%;
+    }
+
+    #main{
+        margin: auto;
+        border-radius: 30px;
+        padding-top: 30px;
+        padding-bottom: 50px;
+    }
+    .score-list {
+        list-style-type: none;
+        padding: 0;
+        margin-bottom: 50px;
+        line-height: 2.1rem;
+    }
+    .score-list li {
+        font-size: 25px;
+        font-family: 'Inter';
+        margin-bottom: 10px;
+
+        position: relative;
+        -webkit-box-align: center;
+        align-items: center;
+        min-height: 36px;
+        padding: 10px 10px;
+        box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 1px 0px, rgba(61, 59, 53, 0.16) 0px 0px 0px 1px, rgba(61, 59, 53, 0.08) 0px 2px 5px 0px;
+        border-radius: 5px;
+        background-color: rgba(255, 255, 255, 0.5);
+        -webkit-tap-highlight-color: transparent;
+
+    }
+
+    .label {
+        font-weight: 500;
+        color: #04091f;
+    }
+
+    .badge{
+        display: inline-flex;
+        -webkit-box-align: center;
+        align-items: center;
+        -webkit-box-pack: center;
+        justify-content: center;
+        width: 25px;
+        height: 25px;
+        min-width: 18px;
+        min-height: 18px;
+        background-color: #04095a;
+        font-size: 27px;
+        font-weight: 900;
+        line-height: 1;
+        color: rgb(255, 255, 255);
+        border-radius: 3px;
+    }
+
+    .score {
+        color: #e1b64e;
+        font-weight: 900;
+    }
+    .chart-container {
+        width: 80%;
+        height: 500px;
+        margin: auto;
+    }
+    canvas {
+        display: block;
+        width: 100%;
+        background-color: #04091f;
+        padding: 30px;
+    }
+
+    #btn-div{
+        text-align: center;
+    }
+
+    #btn-div > a {
+        display: inline-block;
+        background-color: #04091f;
+        color: #e1b64e;
+        padding: 15px;
+        border-radius: 7px;
+        margin-top: 30px;
+        font-size: 15px;
+        font-weight: 600;
+        box-shadow: 1px 1px 3px black;
+    }
+
+    #btn-div > a:hover {
+        cursor: pointer;
+        background-color: #e1b64e;
+        color: #04091f;
+        padding: 15px;
+        border-radius: 7px;
+    }
+
+    .cgUlqp {
+        background-color: #0d1738;
+        position: relative;
+        text-align: initial;
+        display: flex;
+        flex-direction: column;
+        margin: 0px 0px 20px;
+        padding-top: 30px;
+        padding-bottom: 30px;
+    }
+
+    .hnYwNt {
+        align-self: center;
+    }
+
+    .iBifEW {
+        position: relative;
+        display: block;
+        height: 0px;
+        overflow: visible;
+        padding-bottom: 40.82%;
+    }
+
+    .iFWvBd {
+        display: block;
+        max-width: 100%;
+        object-fit: contain;
+        width: 250px;
+        box-shadow: none;
+    }
+
+    @media (max-width: 480px) {
+        .chart-container {
+            height: 300px;
+            width: 100%;
+        }
+
+        .score-list li {
+            font-size: 16px;
+            line-height: 1.5rem;
+        }
+
+        #main h1 {
+            font-size: 20px;
+        }
+
+        #btn-div > a {
+            width: 90%;
+            white-space: normal;
+            line-height: 1.4;
+            padding: 7px;
+        }
+
+        div[style*="width: 50%"] {
+            width: 90% !important;
+        }
+
+        .avatar img{
+            margin: auto;
+            margin-top: -70px;
+            width: 80px;
+            height: 80px;
+        }
+
+        canvas {
+            padding: 5px;
+        }
+    }
+
+    .score-list li {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .sc-frniUE.iFWvBd {
+        max-width: 100%;
+        height: auto;
+    }
+</style>
+</head>
+<body>
+    <div>
+        <div>
+            <!-- <div class="navbar">
+                <img src="https://storage.tally.so/5eb194ef-7797-49d9-8970-a4a6da8177b3/1738452438211-1-.jpeg" alt="Form cover">
+            </div>
+            <div class="avatar">
+                <img src="https://storage.tally.so/6862b555-2cd2-4c80-acd2-258f70bc7493/1728391908712.jpeg" alt="Form logo">
+            </div> -->
+
+            <div class="sc-bzkCTM cgUlqp">
+                <div width="250" class="sc-huXwEz hnYwNt">
+                    <picture class="sc-FFETS iBifEW">
+                        <img id="image-d1348ae7" src="https://d1yei2z3i6k35z.cloudfront.net/1954946/67cb039534adf_BoosteurdEntrepriseLogo.png" width="250" loading="lazy" class="sc-frniUE iFWvBd">
+                    </picture>
+                </div>
+            </div>
+
+            <div class="avatar">
+                <img src="https://storage.tally.so/6862b555-2cd2-4c80-acd2-258f70bc7493/1728391908712.jpeg" alt="Form logo">
+            </div>
+
+            <div id="main">
+
+                <div style="text-align: center; padding-left: 15px; padding-right: 15px;"><h1>Vos scores et diagramme de Maturité</h1></div>
+
+                <div style="width: 50%; margin:auto;">
+                    <p style="margin-bottom: 50px; margin-top: 50px;">
+                        <ul class="score-list">
+                            <li><span class="label"><span class="badge">1</span> Fondations:</span> <span class="score" id="fondationScore"></span></li>
+                            <li><span class="label"><span class="badge">2</span> Marketing:</span> <span class="score" id="marketingScore"></span></li>
+                            <li><span class="label"><span class="badge">3</span> Leviers:</span> <span class="score" id="levierScore"></span></li>
+                            <li><span class="label"><span class="badge">4</span> Équipe:</span> <span class="score" id="equipeScore"></span></li>
+                            <li><span class="label"><span class="badge">5</span> Démultiplication:</span> <span class="score" id="demultiplicationScore"></span></li>
+                            <li><span class="label"><span class="badge">6</span> Pilotage:</span> <span class="score" id="pilotageScore"></span></li>
+                        </ul>
+                    </p>
+                </div>
+
+                <div class="chart-container">
+                    <canvas id="radarChart"></canvas>
+                </div>
+
+                <div id="btn-div">
+                    <a href="https://calendly.com/boosteur-d-entreprise/30min?month=2025-03">Cliquez pour prendre rendez-vous et découvrir votre plan d'action</a>
+                </div>
+            </div>
+
+        </div>
+
+
+    </div>
+    <script>
+        // Get user ID from URL parameter
+        const urlParams = new URLSearchParams(window.location.search);
+        const submission_id = urlParams.get('submission_id');
+
+        async function loadChart() {
+            try {
+
+                if(submission_id){
+
+                    /* sample data
+                    var formData = 1;
+                    var chartData = [80, 50, 30, 15, 15, 70];*/
+
+                    var formData = await fetch(`https://hook.eu1.make.com/ijr2waq039s0bj1q3gngju1tfhpys4cn?submission_id=${submission_id}`, {
+                        headers: {
+                            "Content-Type": "application/json"
+                        }
+                    })
+                    .then(response => response.json())
+                    .then(data => JSON.parse(data) )
+                    .catch(error => {
+                        console.error("Error:", error);
+                    });
+
+                    if(formData) {
+
+                        const chartData = [
+                            formData['Score Fondations'],
+                            formData['Score Marketing'],
+                            formData['Score Levier'],
+                            formData['Score Équipe'],
+                            formData['Score Démultiplication'],
+                            formData['Score Pilotage'],
+                        ];
+
+                        document.getElementById("fondationScore").textContent = chartData[0] +"%";
+                        document.getElementById("marketingScore").textContent = chartData[1] +"%";
+                        document.getElementById("levierScore").textContent = chartData[2] +"%";
+                        document.getElementById("equipeScore").textContent = chartData[3] +"%";
+                        document.getElementById("demultiplicationScore").textContent = chartData[4] +"%";
+                        document.getElementById("pilotageScore").textContent = chartData[5] +"%";
+
+                        const radarChart = new Chart(document.getElementById('radarChart'), {
+                            type: 'radar',
+                            data: {
+                                labels: ["1/ Fondations", "2/ Marketing", "3/ Leviers", "4/ Équipe", "5/ Démultiplication", "6/ Pilotage"],
+                                datasets: [{
+                                    label: 'Maturité par domaine',
+                                    data: chartData,
+                                    backgroundColor: 'rgba(54, 162, 235, 0.2)',
+                                    borderColor: 'rgba(54, 162, 235, 1)',
+                                    pointBackgroundColor: 'rgba(225, 181, 82)'
+                                }]
+                            },
+                            options: {
+                                scales: {
+                                    r: {
+                                        grid: {
+                                            color: 'rgba(225, 181, 82)'
+                                        },
+                                        ticks: {
+                                            stepSize: 5,
+                                            beginAtZero: true,
+                                            max: 100,
+                                            callback: function(value) { return value + '%'; }
+                                        },
+                                        pointLabels: {
+                                            color: "rgba(255, 255, 255, 1)",
+                                            font: {
+                                                size: () => window.innerWidth < 768 ? 12 : 20
+                                            },
+                                            /*callback: (value) => value.length > 12 ? value.substring(0, 10) + '...' : value*/
+                                        }
+                                    }
+                                },
+                                plugins: {
+                                    legend: {
+                                        display: true
+                                    },
+                                    tooltip: {
+                                        enabled: true,
+                                        bodyFont: {
+                                            size: 14
+                                        },
+                                        callbacks: {
+                                            label: (context) => `${context.dataset.label}: ${context.raw}%`
+                                        }
+                                    }
+                                },
+                                responsive: true,
+                                maintainAspectRatio: false,
+                                animation: {
+                                    duration: 1000,
+                                    easing: 'easeOutQuart'
+                                },
+                            }
+                        });
+                    }
+                }
+
+            }catch (error) {
+                document.body.innerHTML = `Error loading chart: ${error.message}`;
+            }
+        }
+
+        loadChart();
+    </script>
+</body>
+</html>
