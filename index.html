@@ -788,6 +788,7 @@ h2{
       <div class="page-body">
         <h2 id="1b5a37cd-425d-80da-a178-edc52ee39f68" class="">1️⃣ Score Global &amp; Interprétation</h2>
         <p id="1b5a37cd-425d-80d1-9629-d8289f41a831" class="">📊 <strong>Score Global :</strong> <span id="scoreGlobal"></span></p>
+        <p id="1b5a37cd-425d-80d1-9629-d8289f41a831" class="">🚀 <strong>Votre Gain potentiel :</strong> <span id="gainPotentiel"></span></p>
 
         <p id="1b5a37cd-425d-8053-aab8-c46383786f60" class="">🎯 <strong>Niveaux de Maturité en Automatisation</strong> :</p>
         <ul id="1b5a37cd-425d-8063-acca-ecc7decce188" class="bulleted-list">
@@ -1073,7 +1074,13 @@ h2{
         <p id="1b5a37cd-425d-809b-9cb7-c5af73120caa" class="">✔️ <strong>Une entreprise 100% automatisée fonctionne avec des coûts minimaux et une productivité maximale</strong>.</p>
         <p id="1b5a37cd-425d-80c0-85f0-f2b4aa5b775c" class="">✔️ <strong>Atteindre 80-100% d’automatisation est l’objectif pour garantir une entreprise autonome et optimisée</strong>.</p>
         <h3 id="1b5a37cd-425d-80fa-8501-df75b08e2cf5" class="">📊 Graphique de Maturité :</h3>
-        <figure id="1b5a37cd-425d-8086-b74a-d828267a284d" class="image"><a href="https://sas-barclais-consulting.odoo.com/web/image/5236-7c179f3b/output%20%284%29.png?access_token=d2d0d0b3-19cd-4e81-9743-f46ae8301f61"><img src="https://sas-barclais-consulting.odoo.com/web/image/5236-7c179f3b/output%20%284%29.png?access_token=d2d0d0b3-19cd-4e81-9743-f46ae8301f61"/></a></figure>
+
+        <figure id="1b5a37cd-425d-8086-b74a-d828267a284d" class="image">
+          <!-- <a href="https://sas-barclais-consulting.odoo.com/web/image/5236-7c179f3b/output%20%284%29.png?access_token=d2d0d0b3-19cd-4e81-9743-f46ae8301f61">
+          <img src="https://sas-barclais-consulting.odoo.com/web/image/5236-7c179f3b/output%20%284%29.png?access_token=d2d0d0b3-19cd-4e81-9743-f46ae8301f61"/></a> -->
+          <img src="https://res.cloudinary.com/wesands/image/upload/v1742259030/graphique-de-maturite_avmtw0.png" alt="">
+        </figure>
+
         <h2 id="1b5a37cd-425d-8038-904d-ed96e02452ff" class="">5️⃣ Conclusion &amp; Prochaines Étapes</h2>
         <h3 id="1b5a37cd-425d-807d-ad6d-fed17d8426de" class="">🚀 Votre entreprise est-elle prête pour l’automatisation totale ?</h3>
         <p id="1b5a37cd-425d-80a9-8195-d50a560d6204" class="">Si votre score est inférieur à 80%, il est <strong>urgent</strong> d’optimiser et d’automatiser votre entreprise.</p>
@@ -1112,7 +1119,7 @@ h2{
 
             //sample data
             /*var formData = 1;
-            var chartData = [80, 50, 30, 15, 15, 70];*/
+            var chartData = [80, 50, 30, 15, 15, 70, 20000, 50000];*/
 
             var formData = await fetch(`https://hook.eu1.make.com/ijr2waq039s0bj1q3gngju1tfhpys4cn?submission_id=${submission_id}`, {
                 headers: {
@@ -1136,9 +1143,16 @@ h2{
               ];
 
               let scoreGlobal = Math.trunc( (chartData.reduce((a, b) => a + b, 0))/6 );
-              //console.log(scoreGlobal);
+
+              const CA_annuel = formData['CA annuel N-1'];
+              const Resultat_net = formData['Résultat Net annuel N-1'];
+
+              let gainPotentiel = Math.trunc( (CA_annuel - Resultat_net)/CA_annuel ) ;
+
 
               document.getElementById("scoreGlobal").textContent = scoreGlobal +"%";
+              document.getElementById("gainPotentiel").textContent = gainPotentiel +"%";
+
               document.getElementById("fondationScore").textContent = chartData[0] +"%";
               document.getElementById("marketingScore").textContent = chartData[1] +"%";
               document.getElementById("levierScore").textContent = chartData[2] +"%";
