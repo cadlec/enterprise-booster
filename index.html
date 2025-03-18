@@ -788,7 +788,9 @@ h2{
       <div class="page-body">
         <h2 id="1b5a37cd-425d-80da-a178-edc52ee39f68" class="">1️⃣ Score Global &amp; Interprétation</h2>
         <p id="1b5a37cd-425d-80d1-9629-d8289f41a831" class="">📊 <strong>Score Global :</strong> <span id="scoreGlobal"></span></p>
-        <p id="1b5a37cd-425d-80d1-9629-d8289f41a831" class="">🚀 <strong>Votre Gain potentiel :</strong> <span id="gainPotentiel"></span></p>
+        <p id="1b5a37cd-425d-80d1-9629-d8289f41a831" class="">
+          🚀 <strong>Votre Gain potentiel :</strong> <span id="gainPotentiel"></span>
+        </p>
 
         <p id="1b5a37cd-425d-8053-aab8-c46383786f60" class="">🎯 <strong>Niveaux de Maturité en Automatisation</strong> :</p>
         <ul id="1b5a37cd-425d-8063-acca-ecc7decce188" class="bulleted-list">
@@ -1147,11 +1149,14 @@ h2{
               const CA_annuel = formData['CA annuel N-1'];
               const Resultat_net = formData['Résultat Net annuel N-1'];
 
-              let gainPotentiel = Math.trunc( (CA_annuel - Resultat_net)/CA_annuel ) ;
+              let gainPotentiel = Math.trunc( 100*(CA_annuel - Resultat_net)/CA_annuel ) ;
 
 
               document.getElementById("scoreGlobal").textContent = scoreGlobal +"%";
               document.getElementById("gainPotentiel").textContent = gainPotentiel +"%";
+
+              /*document.getElementById("CA_annuel").textContent = CA_annuel +"€";
+              document.getElementById("Resultat_net").textContent = Resultat_net +"€";*/
 
               document.getElementById("fondationScore").textContent = chartData[0] +"%";
               document.getElementById("marketingScore").textContent = chartData[1] +"%";
