@@ -742,7 +742,7 @@ h2{
 
 #call-to-action > a{
   text-decoration: none;
-  background-color: #0d1738;
+  background-color: #e1b64e;
   color: white;
   font-weight: 700;
   padding: 12px 24px;
@@ -756,7 +756,7 @@ h2{
 }
 
 #call-to-action > a:hover {
-  background-color: #e4b850;
+  background-color: #0d1738;
 }
 
 [id='1b5a37cd-425d-8000-8afd-fd9c77bb2dac'] {
@@ -766,6 +766,14 @@ h2{
 
 #plan-action li {
   list-style: none !important;
+}
+
+#plan-action ul {
+  padding-inline-start: 0;
+}
+
+ul{
+  padding-inline-start: 1.4rem;
 }
 
 .page-body{
@@ -797,7 +805,7 @@ h2{
         <h2 id="1b5a37cd-425d-80da-a178-edc52ee39f68" class="">1️⃣ Score Global &amp; Interprétation</h2>
         <p id="1b5a37cd-425d-80d1-9629-d8289f41a831" class="">📊 <strong>Score Global :</strong> <span id="scoreGlobal"></span></p>
         <p id="1b5a37cd-425d-80d1-9629-d8289f41a831" class="">
-          🚀 <strong>Votre Gain potentiel si passage à 80% de maturité :</strong> <span id="gainPotentiel"></span>
+          🚀 <strong>Votre Gain minimum si passage à 80% de maturité :</strong> <span class="gainMinimum"></span>
         </p>
 
         <p id="1b5a37cd-425d-8053-aab8-c46383786f60" class="">🎯 <strong>Niveaux de Maturité en Automatisation</strong> :</p>
@@ -816,7 +824,24 @@ h2{
         <ul id="1b5a37cd-425d-806a-ab5b-cce8b051654c" class="bulleted-list">
           <li style="list-style-type:disc"><strong>81-100%</strong> : 🚀 <strong>Entreprise 100% autonome, optimisée et scalable</strong>.</li>
         </ul>
-        <h2 id="1b5a37cd-425d-80a9-bae2-fbafa88fc51e" class="">2️⃣ Résultats par Pilier</h2>
+
+        <h2 id="1b5a37cd-425d-80a9-bae2-fbafa88fc51e" class="">2️⃣ Éligibilité et ROI minimal estimé :</h2>
+        <div>
+          <p>🎉 Bonne nouvelle ! Votre score vous rend éligible à l'accompagnement BOOSTEUR avec un ROI minimal estimé à <strong class="gainMinimum"></strong></p>
+
+          <h3>✅ Votre marge de progression est considérable :</h3>
+          <p>En atteignant 80% de maturité, vous bénéficierez d’un gain minimal estimé à <strong class="gainMinimum"></strong>.</p>
+
+          <h3>📈 Un ROI garanti :</h3>
+          <p>Avec notre méthodologie éprouvée, vous pouvez transformer votre entreprise en un actif performant et autonome, tout en maximisant votre rentabilité.</p>
+
+          <div id="call-to-action">
+            <a href="https://calendly.com/boosteur-d-entreprise/30min?month=2025-03">👉 Passez à l’action maintenant et sécurisez votre croissance !</a>
+          </div>
+
+        </div>
+
+        <h2 id="1b5a37cd-425d-80a9-bae2-fbafa88fc51e" class="">3️⃣ Résultats par Pilier</h2>
 
         <div style="overflow-x:auto;">
           <table class="simple-table">
@@ -856,7 +881,7 @@ h2{
           </table>
         </div>
 
-        <h2 id="1b5a37cd-425d-8007-b677-ebb9614513ad" class="">3️⃣ Plan d’Action Personnalisé</h2>
+        <h2 id="1b5a37cd-425d-8007-b677-ebb9614513ad" class="">4️⃣ Plan d’Action Personnalisé</h2>
 
         <div id="plan-action">
           <h3 id="1b5a37cd-425d-8034-b532-d4590cafd39f" class="">🔹 <strong>Fondations</strong></h3>
@@ -944,7 +969,7 @@ h2{
           </ul>
         </div>
 
-        <h2 id="1b5a37cd-425d-800b-bd23-cba926b5991a" class="">4️⃣ Simulation Financière &amp; Gains Attendus</h2>
+        <h2 id="1b5a37cd-425d-800b-bd23-cba926b5991a" class="">5️⃣ Simulation Financière &amp; Gains Attendus</h2>
         <p id="1b5a37cd-425d-80bd-b88c-f6d04d2f3cad" class="">Ce tableau estime <strong>les gains financiers et opérationnels</strong> en fonction du <strong>taux d’automatisation</strong> d’une entreprise. Il se base sur <strong>4 indicateurs clés</strong> :</p>
         <p id="1b5a37cd-425d-807e-9183-c269625055d0" class="">1️⃣ <strong>Productivité (↑)</strong> : L’augmentation de la productivité des équipes et des opérations.</p>
         <p id="1b5a37cd-425d-80b5-87e4-c4e96461bad9" class="">2️⃣ <strong>Coûts (↓)</strong> : La réduction des coûts fixes et opérationnels grâce à l’automatisation.</p>
@@ -952,7 +977,7 @@ h2{
         <p id="1b5a37cd-425d-80cf-b85c-c6670e018175" class="">4️⃣ <strong>Rentabilité (↑)</strong> : La rentabilité globale de l’entreprise après automatisation.</p>
         <h3 id="1b5a37cd-425d-8064-a1cd-c62c99155e99" class=""><strong>🔍 Lecture du tableau</strong></h3>
 
-        <!-- <div style="overflow-x:auto;">
+        <div style="overflow-x:auto;">
           <table id="1b5a37cd-425d-806e-89a6-ff818f2629da" class="simple-table">
             <thead>
               <tr id="1b5a37cd-425d-80a8-9404-db8e42b254c3">
@@ -1009,31 +1034,34 @@ h2{
               </tr>
             </tbody>
           </table>
-        </div> -->
+        </div>
 
-        <figure class="image">
+        <!-- <figure class="image">
           <img src="https://res.cloudinary.com/wesands/image/upload/v1742337207/WhatsApp_Image_2025-03-18_at_18.22.19_jf2dqx.jpg" alt="">
-        </figure>
+        </figure> -->
 
         <h3 id="1b5a37cd-425d-8041-b6c0-fc413a9ff668" class=""><strong>📌 Explication des valeurs :</strong></h3>
-        <ul id="1b5a37cd-425d-80b4-bef8-f608d2d28c43" class="bulleted-list">
-          <li style="list-style-type:disc"><strong>0% d’automatisation</strong> : L’entreprise n’a aucun gain, elle est 100% dépendante de processus manuels inefficaces.</li>
-        </ul>
-        <ul id="1b5a37cd-425d-80c3-8ad8-fc846ae32646" class="bulleted-list">
-          <li style="list-style-type:disc"><strong>20% d’automatisation</strong> : Légères améliorations de productivité (+15%), baisse des coûts (-10%) et augmentation des revenus (+12%).</li>
-        </ul>
-        <ul id="1b5a37cd-425d-80c6-9289-d04b0d9c3820" class="bulleted-list">
-          <li style="list-style-type:disc"><strong>40% d’automatisation</strong> : Impact plus fort avec +35% de productivité et une réduction des coûts de 25%.</li>
-        </ul>
-        <ul id="1b5a37cd-425d-80c5-b814-f7c4ca2c8b13" class="bulleted-list">
-          <li style="list-style-type:disc"><strong>60% d’automatisation</strong> : Les bénéfices deviennent significatifs, avec +50% de productivité et une rentabilité améliorée de 35%.</li>
-        </ul>
-        <ul id="1b5a37cd-425d-80f9-a9d9-e60d2904ff84" class="bulleted-list">
-          <li style="list-style-type:disc"><strong>80% d’automatisation</strong> : L’entreprise atteint une efficacité quasi maximale, réduisant ses coûts de 60% et augmentant ses revenus de 65%.</li>
-        </ul>
-        <ul id="1b5a37cd-425d-807c-8dcf-f2bec56af95c" class="bulleted-list">
-          <li style="list-style-type:disc"><strong>100% d’automatisation</strong> : L’entreprise est <strong>totalement autonome</strong>, avec <strong>+90% de productivité, -80% de coûts, +85% de revenus et +70% de rentabilité</strong>.</li>
-        </ul>
+        <div>
+          <ul id="1b5a37cd-425d-80b4-bef8-f608d2d28c43" class="bulleted-list">
+            <li style="list-style-type:disc"><strong>0% d’automatisation</strong> : L’entreprise n’a aucun gain, elle est 100% dépendante de processus manuels inefficaces.</li>
+          </ul>
+          <ul id="1b5a37cd-425d-80c3-8ad8-fc846ae32646" class="bulleted-list">
+            <li style="list-style-type:disc"><strong>20% d’automatisation</strong> : Légères améliorations de productivité (+15%), baisse des coûts (-10%) et augmentation des revenus (+12%).</li>
+          </ul>
+          <ul id="1b5a37cd-425d-80c6-9289-d04b0d9c3820" class="bulleted-list">
+            <li style="list-style-type:disc"><strong>40% d’automatisation</strong> : Impact plus fort avec +35% de productivité et une réduction des coûts de 25%.</li>
+          </ul>
+          <ul id="1b5a37cd-425d-80c5-b814-f7c4ca2c8b13" class="bulleted-list">
+            <li style="list-style-type:disc"><strong>60% d’automatisation</strong> : Les bénéfices deviennent significatifs, avec +50% de productivité et une rentabilité améliorée de 35%.</li>
+          </ul>
+          <ul id="1b5a37cd-425d-80f9-a9d9-e60d2904ff84" class="bulleted-list">
+            <li style="list-style-type:disc"><strong>80% d’automatisation</strong> : L’entreprise atteint une efficacité quasi maximale, réduisant ses coûts de 60% et augmentant ses revenus de 65%.</li>
+          </ul>
+          <ul id="1b5a37cd-425d-807c-8dcf-f2bec56af95c" class="bulleted-list">
+            <li style="list-style-type:disc"><strong>100% d’automatisation</strong> : L’entreprise est <strong>totalement autonome</strong>, avec <strong>+90% de productivité, -80% de coûts, +85% de revenus et +70% de rentabilité</strong>.</li>
+          </ul>
+        </div>
+
         <h3 id="1b5a37cd-425d-8050-bc0e-d4eae973e65d" class=""><strong>📈 Application concrète :</strong></h3>
         <ol type="1" id="1b5a37cd-425d-80b4-9184-ef56d58a8814" class="numbered-list" start="1">
           <li><strong>Une entreprise à 40% d’automatisation</strong> gagne <strong>+35% de productivité</strong> et réduit ses coûts de <strong>25%</strong>.→ <strong>Résultat</strong> : Plus d’efficacité, baisse des dépenses, et meilleure rentabilité.</li>
@@ -1104,11 +1132,12 @@ h2{
           <img src="https://res.cloudinary.com/wesands/image/upload/v1742336977/WhatsApp_Image_2025-03-18_at_18.21.35_baxspt.jpg" alt="">
         </figure>
 
-        <h2 id="1b5a37cd-425d-8038-904d-ed96e02452ff" class="">5️⃣ Conclusion &amp; Prochaines Étapes</h2>
+        <h2 id="1b5a37cd-425d-8038-904d-ed96e02452ff" class="">6️⃣ Conclusion &amp; Prochaines Étapes</h2>
         <h3 id="1b5a37cd-425d-807d-ad6d-fed17d8426de" class="">🚀 Votre entreprise est-elle prête pour l’automatisation totale ?</h3>
         <p id="1b5a37cd-425d-80a9-8195-d50a560d6204" class="">Si votre score est inférieur à 80%, il est <strong>urgent</strong> d’optimiser et d’automatiser votre entreprise.</p>
         <p id="1b5a37cd-425d-8019-9596-ffac273ff60b" class="">L’automatisation n’est pas un luxe, mais une nécessité pour <strong>scaler efficacement</strong> et <strong>maximiser la rentabilité</strong>.</p>
         <h3 id="1b5a37cd-425d-80c0-85ac-fee5d50b3006" class="">✅ Prochaines Étapes :</h3>
+
         <ul id="1b5a37cd-425d-80e2-be97-e1e889fc555f" class="bulleted-list">
           <li style="list-style-type:disc">Mettre en place les <strong>processus documentés et automatisés</strong> immédiatement.</li>
         </ul>
@@ -1181,13 +1210,13 @@ h2{
 
               let Resultat_net_final = Math.trunc( Resultat_net_initial * (1 + (60 - Rentabilite_initiale) / 100));
 
-
-              let gainPotentiel = Resultat_net_final - Resultat_net_initial;
-
+              let gainMinimum = formatEuro(Resultat_net_final - Resultat_net_initial);
 
               document.getElementById("scoreGlobal").textContent = scoreGlobal +"%";
-              document.getElementById("gainPotentiel").textContent = formatEuro(gainPotentiel);
 
+              document.querySelectorAll(".gainMinimum").forEach(el => {
+                el.textContent = gainMinimum;
+              });
 
 
               document.getElementById("fondationScore").textContent = chartData[0] +"%";
