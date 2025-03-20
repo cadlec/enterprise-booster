@@ -765,11 +765,15 @@ h2{
 }
 
 #plan-action li {
-  list-style: none !important;
+  /*list-style: none !important;*/
 }
 
 #plan-action ul {
-  padding-inline-start: 0;
+ /* padding-inline-start: 0;*/
+}
+
+#plan-action p{
+  margin-top: 1.3em;
 }
 
 ul{
@@ -778,6 +782,11 @@ ul{
 
 .page-body{
   text-align: justify;
+}
+
+.gain-financier li{
+  padding-top: 5px;
+  padding-bottom: 5px;
 }
 </style>
   </head>
@@ -803,12 +812,12 @@ ul{
 
       <div class="page-body">
         <h2 id="1b5a37cd-425d-80da-a178-edc52ee39f68" class="">1️⃣ Score Global &amp; Interprétation</h2>
-        <p id="1b5a37cd-425d-80d1-9629-d8289f41a831" class="">📊 <strong>Score Global :</strong> <span id="scoreGlobal"></span></p>
+        <p id="1b5a37cd-425d-80d1-9629-d8289f41a831" class=""><strong>Score Global :</strong> <span id="scoreGlobal"></span></p>
         <p id="1b5a37cd-425d-80d1-9629-d8289f41a831" class="">
-          🚀 <strong>Votre Gain minimum si passage à 80% de maturité :</strong> <span class="gainMinimum"></span>
+          <strong>Votre Gain minimum si passage à 80% de maturité :</strong> <span class="gainMinimum"></span>
         </p>
 
-        <p id="1b5a37cd-425d-8053-aab8-c46383786f60" class="">🎯 <strong>Niveaux de Maturité en Automatisation</strong> :</p>
+        <p id="1b5a37cd-425d-8053-aab8-c46383786f60" class=""><strong>Niveaux de Maturité en Automatisation</strong> :</p>
         <ul id="1b5a37cd-425d-8063-acca-ecc7decce188" class="bulleted-list">
           <li style="list-style-type:disc"><strong>0-20%</strong> : Automatisation quasi inexistante – Dépendance humaine critique.</li>
         </ul>
@@ -827,16 +836,18 @@ ul{
 
         <h2 id="1b5a37cd-425d-80a9-bae2-fbafa88fc51e" class="">2️⃣ Éligibilité et ROI minimal estimé :</h2>
         <div>
-          <p>🎉 Bonne nouvelle ! Votre score vous rend éligible à l'accompagnement BOOSTEUR avec un ROI minimal estimé à <strong class="gainMinimum"></strong></p>
+          <p>
+            🎉 Félicitations ! Votre score vous qualifie pour l'accompagnement BOOSTEUR D'ENTREPRISE. Sur la base de votre profil, nous estimons un ROI minimal de <strong class="gainMinimum"></strong> sur 12 mois
+          </p>
 
-          <h3>✅ Votre marge de progression est considérable :</h3>
+          <h3>Votre marge de progression est considérable :</h3>
           <p>En atteignant 80% de maturité, vous bénéficierez d’un gain minimal estimé à <strong class="gainMinimum"></strong>.</p>
 
-          <h3>📈 Un ROI garanti :</h3>
+          <h3>Un ROI garanti :</h3>
           <p>Avec notre méthodologie éprouvée, vous pouvez transformer votre entreprise en un actif performant et autonome, tout en maximisant votre rentabilité.</p>
 
           <div id="call-to-action">
-            <a href="https://calendly.com/boosteur-d-entreprise/30min?month=2025-03">👉 Passez à l’action maintenant et sécurisez votre croissance !</a>
+            <a href="https://calendly.com/boosteur-d-entreprise/30min?month=2025-03">👉 Je passe à l'action maintenant et je sécurise ma croissance !</a>
           </div>
 
         </div>
@@ -885,97 +896,117 @@ ul{
 
         <div id="plan-action">
           <h3 id="1b5a37cd-425d-8034-b532-d4590cafd39f" class="">🔹 <strong>Fondations</strong></h3>
-          <ul id="1b5a37cd-425d-807d-a16f-d80e3fd05f16" class="bulleted-list">
-            <li style="list-style-type:disc">📌 <strong>Objectif</strong> : Structurer et documenter TOUS les processus métier.</li>
-          </ul>
-          <ul id="1b5a37cd-425d-808a-ab83-e0e400a7e7d1" class="bulleted-list">
-            <li style="list-style-type:disc">✅ Mettre en place un <strong>SOP centralisé</strong> (Standard Operating Procedures).</li>
-          </ul>
-          <ul id="1b5a37cd-425d-806c-8dd7-e1d89e58fe7f" class="bulleted-list">
-            <li style="list-style-type:disc">✅ Automatiser la gestion du temps et des workflows pour éviter les pertes de temps.</li>
-          </ul>
-          <ul id="1b5a37cd-425d-8018-aff0-d243fdb2285f" class="bulleted-list">
-            <li style="list-style-type:disc">✅ Implémenter des <strong>dashboards en temps réel</strong> pour le suivi des performances.</li>
-          </ul>
+          <div>
+            <p>
+              <strong>Objectif</strong> : Structurer et documenter TOUS les processus métier.
+            </p>
+              <ul id="1b5a37cd-425d-808a-ab83-e0e400a7e7d1" class="bulleted-list">
+                <li style="list-style-type:disc">Mettre en place un <strong>SOP centralisé</strong> (Standard Operating Procedures).</li>
+              </ul>
+              <ul id="1b5a37cd-425d-806c-8dd7-e1d89e58fe7f" class="bulleted-list">
+                <li style="list-style-type:disc">Automatiser la gestion du temps et des workflows pour éviter les pertes de temps.</li>
+              </ul>
+              <ul id="1b5a37cd-425d-8018-aff0-d243fdb2285f" class="bulleted-list">
+                <li style="list-style-type:disc">Implémenter des <strong>dashboards en temps réel</strong> pour le suivi des performances.</li>
+              </ul>
+          </div>
 
-          <h3 id="1b5a37cd-425d-8035-b783-e7a7f4478162" class="">🔹 Marketing</h3>
-          <ul id="1b5a37cd-425d-8090-b779-fb9c5d4d361c" class="bulleted-list">
-            <li style="list-style-type:disc">📌 <strong>Objectif</strong> : Automatiser entièrement l’acquisition et la conversion.</li>
-          </ul>
-          <ul id="1b5a37cd-425d-80b5-9950-d90d8dea670b" class="bulleted-list">
-            <li style="list-style-type:disc">✅ Mettre en place des <strong>funnels de conversion automatisés</strong>.</li>
-          </ul>
-          <ul id="1b5a37cd-425d-8029-b58f-dcbff431e9b7" class="bulleted-list">
-            <li style="list-style-type:disc">✅ Développer un <strong>CRM intelligent</strong> avec scoring automatique des leads.</li>
-          </ul>
-          <ul id="1b5a37cd-425d-8051-9633-d29e347a37fc" class="bulleted-list">
-            <li style="list-style-type:disc">✅ Utiliser l’A/B testing pour <strong>optimiser en continu</strong>.</li>
-          </ul>
+          <h3 id="1b5a37cd-425d-8035-b783-e7a7f4478162" class=""><strong>🔹 Marketing</strong></h3>
+          <div>
+            <p><strong>Objectif</strong> : Automatiser entièrement l’acquisition et la conversion.</p>
 
-          <h3 id="1b5a37cd-425d-8036-8ee9-f2d2110dad84" class="">🔹 Leviers</h3>
-          <ul id="1b5a37cd-425d-8015-b843-d9552ecca979" class="bulleted-list">
-            <li style="list-style-type:disc">📌 <strong>Objectif </strong>: Rendre l’entreprise ultra efficace avec des outils d’automatisation.</li>
-          </ul>
-          <ul id="1b5a37cd-425d-8025-bb29-df3da04a9597" class="bulleted-list">
-            <li style="list-style-type:disc">✅ Intégrer un <strong>ERP</strong> pour centraliser toutes les opérations.</li>
-          </ul>
-          <ul id="1b5a37cd-425d-80a8-b484-e67582cef402" class="bulleted-list">
-            <li style="list-style-type:disc">✅ Automatiser la <strong>facturation, les paiements et les relances clients</strong>.</li>
-          </ul>
-          <ul id="1b5a37cd-425d-80e7-b2ce-ef52dc398f98" class="bulleted-list">
-            <li style="list-style-type:disc">✅ Mettre en place un <strong>support client sans intervention humaine (FAQ, Chatbot, IA)</strong>.</li>
-          </ul>
+            <ul id="1b5a37cd-425d-80b5-9950-d90d8dea670b" class="bulleted-list">
+              <li style="list-style-type:disc">Mettre en place des <strong>funnels de conversion automatisés</strong>.</li>
+            </ul>
+            <ul id="1b5a37cd-425d-8029-b58f-dcbff431e9b7" class="bulleted-list">
+              <li style="list-style-type:disc">Développer un <strong>CRM intelligent</strong> avec scoring automatique des leads.</li>
+            </ul>
+            <ul id="1b5a37cd-425d-8051-9633-d29e347a37fc" class="bulleted-list">
+              <li style="list-style-type:disc">Utiliser l’A/B testing pour <strong>optimiser en continu</strong>.</li>
+            </ul>
+          </div>
 
-          <h3 id="1b5a37cd-425d-8084-8f00-f7c5ae7bd282" class="">🔹 Équipe</h3>
-          <ul id="1b5a37cd-425d-801c-9c0a-fcf662333ec8" class="bulleted-list">
-            <li style="list-style-type:disc">📌 <strong>Objectif </strong>: Structurer et automatiser la gestion RH et la performance.</li>
-          </ul>
-          <ul id="1b5a37cd-425d-809d-818a-e623dec36de3" class="bulleted-list">
-            <li style="list-style-type:disc">✅ Implémenter un <strong>système d’onboarding et formation automatique</strong>.</li>
-          </ul>
-          <ul id="1b5a37cd-425d-80ba-886b-dc1097ad53f7" class="bulleted-list">
-            <li style="list-style-type:disc">✅ Standardiser le suivi des performances et la reconnaissance des collaborateurs.</li>
-          </ul>
-          <ul id="1b5a37cd-425d-8040-8d03-d5ac72732734" class="bulleted-list">
-            <li style="list-style-type:disc">✅ Optimiser la rétention et l’engagement grâce à des <strong>indicateurs RH dynamiques</strong>.</li>
-          </ul>
+          <h3 id="1b5a37cd-425d-8036-8ee9-f2d2110dad84" class=""><strong>🔹 Leviers</strong></h3>
+          <div>
+            <p>
+              <strong>Objectif </strong>: Rendre l’entreprise ultra efficace avec des outils d’automatisation.
+            </p>
 
-          <h3 id="1b5a37cd-425d-8097-88e0-f25b598f2c35" class="">🔹 Démultiplication</h3>
-          <ul id="1b5a37cd-425d-80f1-82a9-c073c5d14bef" class="bulleted-list">
-            <li style="list-style-type:disc">📌 <strong>Objectif </strong>: Scaler l’entreprise sans augmentation des coûts.</li>
-          </ul>
-          <ul id="1b5a37cd-425d-8029-82eb-dbbca51ba5f5" class="bulleted-list">
-            <li style="list-style-type:disc">✅ Standardiser les processus pour une <strong>expansion rapide</strong>.</li>
-          </ul>
-          <ul id="1b5a37cd-425d-8086-83d0-f9f1d4967359" class="bulleted-list">
-            <li style="list-style-type:disc">✅ Développer un modèle duplicable et <strong>adaptable à d’autres marchés</strong>.</li>
-          </ul>
-          <ul id="1b5a37cd-425d-8049-a6fa-efdc7abb8c8c" class="bulleted-list">
-            <li style="list-style-type:disc">✅ Structurer l’entreprise pour une <strong>vente ou une levée de fonds future</strong>.</li>
-          </ul>
+            <ul id="1b5a37cd-425d-8025-bb29-df3da04a9597" class="bulleted-list">
+              <li style="list-style-type:disc">Intégrer un <strong>ERP</strong> pour centraliser toutes les opérations.</li>
+            </ul>
+            <ul id="1b5a37cd-425d-80a8-b484-e67582cef402" class="bulleted-list">
+              <li style="list-style-type:disc">Automatiser la <strong>facturation, les paiements et les relances clients</strong>.</li>
+            </ul>
+            <ul id="1b5a37cd-425d-80e7-b2ce-ef52dc398f98" class="bulleted-list">
+              <li style="list-style-type:disc">Mettre en place un <strong>support client sans intervention humaine (FAQ, Chatbot, IA)</strong>.</li>
+            </ul>
+          </div>
 
-          <h3 id="1b5a37cd-425d-80ae-9dfc-e787f4c2e29f" class="">🔹 Pilotage</h3>
-          <ul id="1b5a37cd-425d-806f-b601-c1e1a37e5ef6" class="bulleted-list">
-            <li style="list-style-type:disc">📌 <strong>Objectif </strong>: Assurer une gouvernance data-driven 100% autonome.</li>
-          </ul>
-          <ul id="1b5a37cd-425d-8048-9da7-c4a43891b0d0" class="bulleted-list">
-            <li style="list-style-type:disc">✅ Mettre en place des <strong>KPIs dynamiques et interactifs</strong>.</li>
-          </ul>
-          <ul id="1b5a37cd-425d-800a-80b6-ddf4beb097de" class="bulleted-list">
-            <li style="list-style-type:disc">✅ Intégrer des <strong>alertes et recommandations automatisées</strong> pour la prise de décision.</li>
-          </ul>
-          <ul id="1b5a37cd-425d-807f-a572-cab34ed32d27" class="bulleted-list">
-            <li style="list-style-type:disc">✅ Adopter un <strong>système de gestion prédictive des risques</strong>.</li>
-          </ul>
+          <h3 id="1b5a37cd-425d-8084-8f00-f7c5ae7bd282" class=""><strong>🔹 Équipe</strong></h3>
+          <div>
+            <p>
+              <strong>Objectif </strong>: Structurer et automatiser la gestion RH et la performance.
+            </p>
+
+            <ul id="1b5a37cd-425d-809d-818a-e623dec36de3" class="bulleted-list">
+              <li style="list-style-type:disc">Implémenter un <strong>système d’onboarding et formation automatique</strong>.</li>
+            </ul>
+            <ul id="1b5a37cd-425d-80ba-886b-dc1097ad53f7" class="bulleted-list">
+              <li style="list-style-type:disc">Standardiser le suivi des performances et la reconnaissance des collaborateurs.</li>
+            </ul>
+            <ul id="1b5a37cd-425d-8040-8d03-d5ac72732734" class="bulleted-list">
+              <li style="list-style-type:disc">Optimiser la rétention et l’engagement grâce à des <strong>indicateurs RH dynamiques</strong>.</li>
+            </ul>
+          </div>
+
+          <h3 id="1b5a37cd-425d-8097-88e0-f25b598f2c35" class=""><strong>🔹 Démultiplication</strong></h3>
+          <div>
+            <p>
+              <strong>Objectif </strong>: Scaler l’entreprise sans augmentation des coûts.
+            </p>
+            <ul id="1b5a37cd-425d-8029-82eb-dbbca51ba5f5" class="bulleted-list">
+              <li style="list-style-type:disc">Standardiser les processus pour une <strong>expansion rapide</strong>.</li>
+            </ul>
+            <ul id="1b5a37cd-425d-8086-83d0-f9f1d4967359" class="bulleted-list">
+              <li style="list-style-type:disc">Développer un modèle duplicable et <strong>adaptable à d’autres marchés</strong>.</li>
+            </ul>
+            <ul id="1b5a37cd-425d-8049-a6fa-efdc7abb8c8c" class="bulleted-list">
+              <li style="list-style-type:disc">Structurer l’entreprise pour une <strong>vente ou une levée de fonds future</strong>.</li>
+            </ul>
+          </div>
+
+          <h3 id="1b5a37cd-425d-80ae-9dfc-e787f4c2e29f" class=""><strong>🔹 Pilotage</strong></h3>
+          <div>
+            <p>
+              <strong>Objectif </strong>: Assurer une gouvernance data-driven 100% autonome.
+            </p>
+
+            <ul id="1b5a37cd-425d-8048-9da7-c4a43891b0d0" class="bulleted-list">
+              <li style="list-style-type:disc">Mettre en place des <strong>KPIs dynamiques et interactifs</strong>.</li>
+            </ul>
+            <ul id="1b5a37cd-425d-800a-80b6-ddf4beb097de" class="bulleted-list">
+              <li style="list-style-type:disc">Intégrer des <strong>alertes et recommandations automatisées</strong> pour la prise de décision.</li>
+            </ul>
+            <ul id="1b5a37cd-425d-807f-a572-cab34ed32d27" class="bulleted-list">
+              <li style="list-style-type:disc">Adopter un <strong>système de gestion prédictive des risques</strong>.</li>
+            </ul>
+          </div>
+
         </div>
 
         <h2 id="1b5a37cd-425d-800b-bd23-cba926b5991a" class="">5️⃣ Simulation Financière &amp; Gains Attendus</h2>
-        <p id="1b5a37cd-425d-80bd-b88c-f6d04d2f3cad" class="">Ce tableau estime <strong>les gains financiers et opérationnels</strong> en fonction du <strong>taux d’automatisation</strong> d’une entreprise. Il se base sur <strong>4 indicateurs clés</strong> :</p>
-        <p id="1b5a37cd-425d-807e-9183-c269625055d0" class="">1️⃣ <strong>Productivité (↑)</strong> : L’augmentation de la productivité des équipes et des opérations.</p>
-        <p id="1b5a37cd-425d-80b5-87e4-c4e96461bad9" class="">2️⃣ <strong>Coûts (↓)</strong> : La réduction des coûts fixes et opérationnels grâce à l’automatisation.</p>
-        <p id="1b5a37cd-425d-80fc-b129-c96bd145035e" class="">3️⃣ <strong>Revenus (↑)</strong> : L’augmentation du chiffre d’affaires grâce à des processus plus performants.</p>
-        <p id="1b5a37cd-425d-80cf-b85c-c6670e018175" class="">4️⃣ <strong>Rentabilité (↑)</strong> : La rentabilité globale de l’entreprise après automatisation.</p>
-        <h3 id="1b5a37cd-425d-8064-a1cd-c62c99155e99" class=""><strong>🔍 Lecture du tableau</strong></h3>
+        <div class="gain-financier">
+          <p id="1b5a37cd-425d-80bd-b88c-f6d04d2f3cad" class="">Ce tableau estime <strong>les gains financiers et opérationnels</strong> en fonction du <strong>taux d’automatisation</strong> d’une entreprise. Il se base sur <strong>4 indicateurs clés</strong> :</p>
+          <ol>
+            <li><strong>Productivité (↑)</strong> : L’augmentation de la productivité des équipes et des opérations.</li>
+            <li><strong>Coûts (↓)</strong> : La réduction des coûts fixes et opérationnels grâce à l’automatisation.</li>
+            <li><strong>Revenus (↑)</strong> : L’augmentation du chiffre d’affaires grâce à des processus plus performants.</li>
+            <li><strong>Rentabilité (↑)</strong> : La rentabilité globale de l’entreprise après automatisation.</li>
+          </ol>
+        </div>
+
+        <h3 id="1b5a37cd-425d-8064-a1cd-c62c99155e99" class=""><strong>Lecture du tableau</strong></h3>
 
         <div style="overflow-x:auto;">
           <table id="1b5a37cd-425d-806e-89a6-ff818f2629da" class="simple-table">
@@ -1120,10 +1151,10 @@ ul{
           </table>
         </div>
 
-        <h3 id="1b5a37cd-425d-800b-b991-d0b2c8f52fd3" class=""><strong>🔹 Conclusion :</strong></h3>
-        <p id="1b5a37cd-425d-80b2-b5bc-e5c16f59c1e2" class="">✔️ <strong>Plus le pourcentage d’automatisation est élevé, plus l’entreprise est efficace, rentable et scalable</strong>.</p>
-        <p id="1b5a37cd-425d-809b-9cb7-c5af73120caa" class="">✔️ <strong>Une entreprise 100% automatisée fonctionne avec des coûts minimaux et une productivité maximale</strong>.</p>
-        <p id="1b5a37cd-425d-80c0-85f0-f2b4aa5b775c" class="">✔️ <strong>Atteindre 80-100% d’automatisation est l’objectif pour garantir une entreprise autonome et optimisée</strong>.</p>
+        <h3 id="1b5a37cd-425d-800b-b991-d0b2c8f52fd3" class=""><strong>🔹Conclusion :</strong></h3>
+        <p id="1b5a37cd-425d-80b2-b5bc-e5c16f59c1e2" class="">✔️<strong>Plus le pourcentage d’automatisation est élevé, plus l’entreprise est efficace, rentable et scalable</strong>.</p>
+        <p id="1b5a37cd-425d-809b-9cb7-c5af73120caa" class="">✔️<strong>Une entreprise 100% automatisée fonctionne avec des coûts minimaux et une productivité maximale</strong>.</p>
+        <p id="1b5a37cd-425d-80c0-85f0-f2b4aa5b775c" class="">✔️<strong>Atteindre 80-100% d’automatisation est l’objectif pour garantir une entreprise autonome et optimisée</strong>.</p>
         <h3 id="1b5a37cd-425d-80fa-8501-df75b08e2cf5" class="">📊 Graphique de Maturité :</h3>
 
         <figure id="1b5a37cd-425d-8086-b74a-d828267a284d" class="image">
@@ -1133,10 +1164,10 @@ ul{
         </figure>
 
         <h2 id="1b5a37cd-425d-8038-904d-ed96e02452ff" class="">6️⃣ Conclusion &amp; Prochaines Étapes</h2>
-        <h3 id="1b5a37cd-425d-807d-ad6d-fed17d8426de" class="">🚀 Votre entreprise est-elle prête pour l’automatisation totale ?</h3>
+        <h3 id="1b5a37cd-425d-807d-ad6d-fed17d8426de" class="">Votre entreprise est-elle prête pour l’automatisation totale ?</h3>
         <p id="1b5a37cd-425d-80a9-8195-d50a560d6204" class="">Si votre score est inférieur à 80%, il est <strong>urgent</strong> d’optimiser et d’automatiser votre entreprise.</p>
         <p id="1b5a37cd-425d-8019-9596-ffac273ff60b" class="">L’automatisation n’est pas un luxe, mais une nécessité pour <strong>scaler efficacement</strong> et <strong>maximiser la rentabilité</strong>.</p>
-        <h3 id="1b5a37cd-425d-80c0-85ac-fee5d50b3006" class="">✅ Prochaines Étapes :</h3>
+        <h3 id="1b5a37cd-425d-80c0-85ac-fee5d50b3006" class="">Prochaines Étapes :</h3>
 
         <ul id="1b5a37cd-425d-80e2-be97-e1e889fc555f" class="bulleted-list">
           <li style="list-style-type:disc">Mettre en place les <strong>processus documentés et automatisés</strong> immédiatement.</li>
@@ -1152,7 +1183,7 @@ ul{
         </ul>
 
         <div id="call-to-action">
-          <a href="https://calendly.com/boosteur-d-entreprise/30min?month=2025-03">Besoin d’un accompagnement ou d’un audit approfondi ? <br/> Contactez-nous pour un plan d’optimisation personnalisé.</a>
+          <a href="https://calendly.com/boosteur-d-entreprise/30min?month=2025-03">Je passe à l'action maintenant et je sécurise ma croissance !</a>
         </div>
 
         <p id="1b5a37cd-425d-8000-8afd-fd9c77bb2dac" class=""><strong>🚀 Vers une entreprise 100% automatisée et scalable ! 🚀</strong></p>
@@ -1192,7 +1223,6 @@ ul{
             });
 
             if(formData) {
-              //console.log(formData);
 
               const chartData = [
                   formData['Score Fondations'],
